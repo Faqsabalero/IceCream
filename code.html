@@ -133,22 +133,20 @@
             @click="currentCatalog = 'tropical'"
             class="catalog-item cursor-pointer rounded-2xl overflow-hidden group"
           >
-            <div 
-              class="relative h-96 bg-gradient-to-bl from-deepblue to-blue-900 border-2 border-blue-500 overflow-hidden"
-            >
-              <div class="absolute inset-0 flex flex-col justify-between p-8">
-                <h3 class="text-5xl font-oxanium font-bold">
+            <div class="relative h-96 border-2 border-blue-500 overflow-hidden rounded-2xl">
+              <!-- Título arriba -->
+              <div class="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black/80 to-transparent p-6">
+                <h3 class="text-4xl font-oxanium font-bold text-center">
                   MIX <span class="text-accent">TROPICAL</span>
                 </h3>
-                <p class="text-xl max-w-md">
+                <p class="text-lg text-center mt-2 opacity-90">
                   Sabor explosivo y perfiles cítricos vibrantes
                 </p>
               </div>
-              <div class="mt-12 flex justify-end transform group-hover:rotate-6 transition-transform">
-                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/963a04a8-6496-4e52-9d29-b691da45e557.png" 
-                     alt="Genéticas tropicales con sabores cítricos"
-                     class="h-64 w-auto rounded-2xl">
-              </div>
+              <!-- Imagen de fondo completa -->
+              <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/963a04a8-6496-4e52-9d29-b691da45e557.png" 
+                   alt="Genéticas tropicales con sabores cítricos"
+                   class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
             </div>
           </div>
           
@@ -156,22 +154,20 @@
             @click="currentCatalog = 'terroso'"
             class="catalog-item cursor-pointer rounded-2xl overflow-hidden group"
           >
-            <div 
-              class="relative h-96 bg-gradient-to-br from-deepblue to-blue-900 border-2 border-green-400 overflow-hidden"
-            >
-              <div class="absolute inset-0 flex flex-col justify-between p-8">
-                <h3 class="text-5xl font-oxanium font-bold">
+            <div class="relative h-96 border-2 border-green-400 overflow-hidden rounded-2xl">
+              <!-- Título arriba -->
+              <div class="absolute top-0 left-0 right-0 z-10 bg-gradient-to-b from-black/80 to-transparent p-6">
+                <h3 class="text-4xl font-oxanium font-bold text-center">
                   TERPENO <span class="text-green-400">TERROSO</span>
                 </h3>
-                <p class="text-xl max-w-md">
+                <p class="text-lg text-center mt-2 opacity-90">
                   Sabores complejos con tonos a tierra y maderas
                 </p>
               </div>
-              <div class="mt-12 transform group-hover:-rotate-6 transition-transform">
-                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/71a3f15d-1bbd-4e5b-b08f-9265e54dd9d9.png" 
-                     alt="Genéticas terrosas con profundos aromas"
-                     class="h-64 w-auto rounded-2xl">
-              </div>
+              <!-- Imagen de fondo completa -->
+              <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/71a3f15d-1bbd-4e5b-b08f-9265e54dd9d9.png" 
+                   alt="Genéticas terrosas con profundos aromas"
+                   class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300">
             </div>
           </div>
         </div>
