@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Icecream Genetics | Variedades Premium</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3.2.45/dist/vue.global.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Oxanium:wght@600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            deepblue: '#0f172a',
+            accent: '#38bdf8',
+          },
+          fontFamily: {
+            montserrat: ['Montserrat', 'sans-serif'],
+            oxanium: ['Oxanium', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .hero-bg {
+      background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), 
+                  url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/84c013e9-cb45-46c4-b6b2-a050c804e17a.png');
+      background-size: cover;
+      background-position: center;
+    }
+    .catalog-item {
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transform-origin: center bottom;
+    }
+    .catalog-item:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 25px 50px -12px rgba(56, 189, 248, 0.25);
+    }
+    .section-title {
+      position: relative;
+      display: inline-block;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #38bdf8, transparent);
+    }
+  </style>
+</head>
+<body class="bg-deepblue text-white font-montserrat">
+  <div id="app">
+    <!-- Header hero -->
+    <header class="hero-bg min-h-screen flex flex-col">
+      <div class="container mx-auto px-4 pt-10">
+        <div class="flex justify-between items-center">
+          <div class="text-3xl font-oxanium font-bold tracking-wider">
+            ICE<span class="text-accent">CREAM</span> GENETICS
+          </div>
+          <nav class="hidden md:block">
+            <ul class="flex space-x-8 text-lg">
+              <li><a href="#nosotros" class="hover:text-accent transition">Nosotros</a></li>
+              <li><a href="#catalogo" class="hover:text-accent transition">Catálogo</a></li>
+              <li><a href="#contacto" class="hover:text-accent transition">Contacto</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+
+      <div class="flex-grow flex flex-col justify-center items-center text-center px-4">
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold font-oxanium mb-6 tracking-tighter">
+          ICE<span class="text-accent">CREAM</span> GENETICS
+        </h1>
+        <p class="text-xl md:text-2xl max-w-2xl mx-auto mb-12">
+          Genética de élite cultivada con pasión y conocimiento avanzado
+        </p>
+        <div class="mt-8 flex gap-4">
+          <a href="#catalogo" class="bg-accent hover:bg-cyan-400 text-deepblue px-8 py-3 rounded-full font-bold text-lg transition">
+            Nuestras variedades
+          </a>
+          <a href="#nosotros" class="border-2 border-accent hover:bg-blue-900 px-8 py-3 rounded-full font-bold text-lg transition">
+            Conócenos
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Nosotros section -->
+    <section id="nosotros" class="py-24">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold font-oxanium mb-16 text-center section-title">SOBRE NOSOTROS</h2>
+        
+        <div class="flex flex-col md:flex-row items-center gap-12">
+          <div class="md:w-1/2">
+            <div class="rounded-xl overflow-hidden shadow-2xl">
+              <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/75080a60-fe51-4734-870e-cef37c86a18c.png" 
+                   alt="Laboratorio profesional de Icecream Genetics con plantas saludables" 
+                   class="w-full">
+            </div>
+          </div>
+          
+          <div class="md:w-1/2">
+            <p class="text-xl leading-relaxed mb-8">
+              En <span class="font-bold text-accent">Icecream Genetics</span> combinamos ciencia botánica avanzada con pasión por la planta. 
+              Fundado por un equipo de biólogos y cultivadores con más de 20 años de experiencia, 
+              nos especializamos en desarrollar variedades únicas y de alto rendimiento.
+            </p>
+            <p class="text-xl leading-relaxed mb-8">
+              Nuestro proceso utiliza técnicas sostenibles de vanguardia y escrutinios de calidad exhaustivos 
+              para garantizar genéticas con perfiles de terpenos excepcionales y pureza genómica certificada.
+            </p>
+            <p class="text-xl leading-relaxed">
+              Cada semilla representa nuestro compromiso con la excelencia cannabica, ofreciendo experiencias 
+              sensoriales únicas a cultivadores exigentes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Catálogo section -->
+    <section id="catalogo" class="py-24 bg-slate-900">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold font-oxanium mb-16 text-center section-title">LÍNEAS GENÉTICAS</h2>
+        
+        <div class="grid md:grid-cols-2 gap-12 mb-20">
+          <div 
+            @click="currentCatalog = 'tropical'"
+            class="catalog-item cursor-pointer rounded-2xl overflow-hidden group"
+          >
+            <div 
+              class="relative h-96 bg-gradient-to-bl from-deepblue to-blue-900 border-2 border-blue-500 overflow-hidden"
+            >
+              <div class="absolute inset-0 flex flex-col justify-between p-8">
+                <h3 class="text-5xl font-oxanium font-bold">
+                  MIX <span class="text-accent">TROPICAL</span>
+                </h3>
+                <p class="text-xl max-w-md">
+                  Sabor explosivo y perfiles cítricos vibrantes
+                </p>
+              </div>
+              <div class="mt-12 flex justify-end transform group-hover:rotate-6 transition-transform">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/963a04a8-6496-4e52-9d29-b691da45e557.png" 
+                     alt="Genéticas tropicales con sabores cítricos"
+                     class="h-64 w-auto rounded-2xl">
+              </div>
+            </div>
+          </div>
+          
+          <div 
+            @click="currentCatalog = 'terroso'"
+            class="catalog-item cursor-pointer rounded-2xl overflow-hidden group"
+          >
+            <div 
+              class="relative h-96 bg-gradient-to-br from-deepblue to-blue-900 border-2 border-green-400 overflow-hidden"
+            >
+              <div class="absolute inset-0 flex flex-col justify-between p-8">
+                <h3 class="text-5xl font-oxanium font-bold">
+                  TERPENO <span class="text-green-400">TERROSO</span>
+                </h3>
+                <p class="text-xl max-w-md">
+                  Sabores complejos con tonos a tierra y maderas
+                </p>
+              </div>
+              <div class="mt-12 transform group-hover:-rotate-6 transition-transform">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/71a3f15d-1bbd-4e5b-b08f-9265e54dd9d9.png" 
+                     alt="Genéticas terrosas con profundos aromas"
+                     class="h-64 w-auto rounded-2xl">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Catálogo dinámico -->
+        <div class="transition-all duration-500" v-if="currentCatalog">
+          <h3 class="text-3xl text-center font-oxanium mb-12">
+            VARIEDADES <span class="text-accent">{{ currentCatalog === 'tropical' ? 'MIX TROPICAL' : 'TERPENO TERROSO' }}</span>
+          </h3>
+          
+          <div v-if="currentCatalog === 'tropical'" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="relative catalog-item bg-blue-900 rounded-2xl overflow-hidden border border-accent">
+              <div class="relative h-64">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2ee108ce-29e0-4d84-91a5-684b00177ace.png" 
+                     alt="Super Lemon - variedad cítrica intensa"
+                     class="w-full h-full object-cover">
+                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black to-transparent py-4 px-6">
+                  <div class="text-xl font-bold">SUPER LEMON</div>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between mb-4">
+                  <div class="text-accent font-bold">20% THC</div>
+                  <div class="flex items-center">
+                    <span class="mr-1">⭐</span> 4.8
+                  </div>
+                </div>
+                <p class="text-sm opacity-75">
+                  Dominante limón con notas de mango tropical. Efecto energizante y creativo.
+                </p>
+              </div>
+            </div>
+            
+            <div class="relative catalog-item bg-blue-900 rounded-2xl overflow-hidden border border-accent">
+              <div class="relative h-64">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1c7acb1c-7258-46bd-9461-ef8380e2e4cb.png" 
+                     alt="Tangie - sabor a mandarina recién pelada"
+                     class="w-full h-full object-cover">
+                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black to-transparent py-4 px-6">
+                  <div class="text-xl font-bold">TANGIE</div>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between mb-4">
+                  <div class="text-accent font-bold">22% THC</div>
+                  <div class="flex items-center">
+                    <span class="mr-1">⭐</span> 4.7
+                  </div>
+                </div>
+                <p class="text-sm opacity-75">
+                  Intenso sabor a mandarina tropical con efectos euforizantes y estimulantes.
+                </p>
+              </div>
+            </div>
+            
+            <div class="relative catalog-item bg-blue-900 rounded-2xl overflow-hidden border border-accent">
+              <div class="relative h-64">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3c0dd2b3-31b0-4c8c-89ec-6a02f732bb72.png" 
+                     alt="Mango Haze - mezcla tropical"
+                     class="w-full h-full object-cover">
+                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black to-transparent py-4 px-6">
+                  <div class="text-xl font-bold">MANGO HAZE</div>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between mb-4">
+                  <div class="text-accent font-bold">18% THC</div>
+                  <div class="flex items-center">
+                    <span class="mr-1">⭐</span> 4.6
+                  </div>
+                </div>
+                <p class="text-sm opacity-75">
+                  Combinación exótica de mangos tropicales con efecto cerebral claro y productivo.
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div v-if="currentCatalog === 'terroso'" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="relative catalog-item bg-blue-900 rounded-2xl overflow-hidden border border-green-400">
+              <div class="relative h-64">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a3c8769f-7b54-4a37-bc20-641c3b50aa1a.png" 
+                     alt="Gelato - variedad terrosa con notas de bosque"
+                     class="w-full h-full object-cover">
+                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black to-transparent py-4 px-6">
+                  <div class="text-xl font-bold">GELATO</div>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between mb-4">
+                  <div class="text-green-400 font-bold">23% THC</div>
+                  <div class="flex items-center">
+                    <span class="mr-1">⭐</span> 4.9
+                  </div>
+                </div>
+                <p class="text-sm opacity-75">
+                  Perfil terroso con notas profundas de pino del Mediterráneo y cacao.
+                </p>
+              </div>
+            </div>
+            
+            <div class="relative catalog-item bg-blue-900 rounded-2xl overflow-hidden border border-green-400">
+              <div class="relative h-64">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0d612c53-6ba4-4b51-98f0-69b60aa792e2.png" 
+                     alt="OG Kush - clásico terroso con notas cítricas"
+                     class="w-full h-full object-cover">
+                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black to-transparent py-4 px-6">
+                  <div class="text-xl font-bold">OG KUSH</div>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between mb-4">
+                  <div class="text-green-400 font-bold">25% THC</div>
+                  <div class="flex items-center">
+                    <span class="mr-1">⭐</span> 4.9
+                  </div>
+                </div>
+                <p class="text-sm opacity-75">
+                  Combinación clásica de limon y pino con efecto corporal potente.
+                </p>
+              </div>
+            </div>
+            
+            <div class="relative catalog-item bg-blue-900 rounded-2xl overflow-hidden border border-green-400">
+              <div class="relative h-64">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e5e29b2f-a156-4b89-a8d1-bf0e7f6cb2ee.png" 
+                     alt="Bubba Kush - tierra húmeda con notas de café"
+                     class="w-full h-full object-cover">
+                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black to-transparent py-4 px-6">
+                  <div class="text-xl font-bold">BUBBA KUSH</div>
+                </div>
+              </div>
+              <div class="p-6">
+                <div class="flex justify-between mb-4">
+                  <div class="text-green-400 font-bold">21% THC</div>
+                  <div class="flex items-center">
+                    <span class="mr-1">⭐</span> 4.7
+                  </div>
+                </div>
+                <p class="text-sm opacity-75">
+                  Dominante notas de tierra húmeda con toque de café y cacao oscuro.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto section -->
+    <section id="contacto" class="py-24 bg-gradient-to-b from-blue-900 to-deepblue">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold font-oxanium mb-16 text-center section-title">CONTÁCTANOS</h2>
+        
+        <div class="max-w-3xl mx-auto grid md:grid-cols-2 gap-12">
+          <div class="space-y-8">
+            <h3 class="text-2xl font-bold">Información de contacto</h3>
+            
+            <div class="flex items-start">
+              <div class="mt-1 mr-4 text-accent">
+                <!-- Icono placeholder para ubicación -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold">Dirección</h4>
+                <p>Calle Genética 420, Barcelona, España</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="mt-1 mr-4 text-accent">
+                <!-- Icono placeholder para teléfono -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold">Teléfono</h4>
+                <p>+34 933 123 456</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start">
+              <div class="mt-1 mr-4 text-accent">
+                <!-- Icono placeholder para email -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-bold">Email</h4>
+                <p>genetica@icecreamgenetics.com</p>
+              </div>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-2xl font-bold mb-6">Envía un mensaje</h3>
+            <form class="space-y-4">
+              <div>
+                <input type="text" placeholder="Nombre" class="w-full bg-slate-800 px-4 py-3 rounded-lg border border-slate-600 focus:border-accent focus:outline-none">
+              </div>
+              <div>
+                <input type="email" placeholder="Email" class="w-full bg-slate-800 px-4 py-3 rounded-lg border border-slate-600 focus:border-accent focus:outline-none">
+              </div>
+              <div>
+                <textarea placeholder="Mensaje" rows="4" class="w-full bg-slate-800 px-4 py-3 rounded-lg border border-slate-600 focus:border-accent focus:outline-none"></textarea>
+              </div>
+              <button type="submit" class="bg-accent hover:bg-cyan-400 text-deepblue font-bold py-3 px-6 rounded-lg transition">
+                Enviar Consulta
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-slate-950 border-t border-slate-800">
+      <div class="container mx-auto px-4 text-center">
+        <div class="mb-6">
+          <div class="text-2xl font-oxanium font-bold tracking-wider inline-block">
+            ICE<span class="text-accent">CREAM</span> GENETICS
+          </div>
+        </div>
+        <p class="text-slate-400 max-w-md mx-auto mb-8">
+          Genética premium para cultivadores exigentes. © 2023 Todos los derechos reservados
+        </p>
+        <div class="flex justify-center space-x-6">
+          <a href="#" class="hover:text-accent transition">
+            <!-- Icono redes sociales -->
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12z"/></svg>
+          </a>
+          <a href="#" class="hover:text-accent transition">
+            <!-- Icono redes sociales -->
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10 5.523 0 10-4.477 10-10 0-5.523-4.477-10-10-10zm3.611 8.667h-1.744c-.459 0-.733.594-.733 1.179v1.343h2.416l-.282 2.186h-2.134v5.576H9.078v-5.576H7v-2.186h2.078V11.1c0-1.92 1.161-3.054 3.026-3.054.907 0 1.597.062 1.814.09v2.531z"/></svg>
+          </a>
+          <a href="#" class="hover:text-accent transition">
+            <!-- Icono redes sociales -->
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M21.55 4.256H2.45A2.45 2.45 0 0 0 0 6.706v10.59a2.45 2.45 0 0 0 2.45 2.448h19.1A2.45 2.45 0 0 0 24 17.296V6.705a2.45 2.45 0 0 0-2.45-2.448zm-18.05 2.73h2.79L9.07 13.7 5.57 6.984h2.278l1.618 4.066c.105.267.198.613.146.613a.343.343 0 0 1 .019-.07L12.7 6.985h2.736l-3.423 6.56 3.283 6.763h-2.384l-2.27-4.087c-.105-.264-.262-.689-.275-.693.017.023.063.167.113.314l.584 1.448-2.026 4.018H6.18l.03-.06 2.952-5.94-3.69-6.597zm16.234 8.84H14.89l-1.618-4.3 5.216-4.348v8.648zm-4.19-10.18l-2.21 1.927-1.578-1.927h3.788zm3.35.925l-5.812 4.76 1.832 4.862h3.98v-9.622z"/></svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const { createApp, ref } = Vue
+    
+    createApp({
+      setup() {
+        const currentCatalog = ref(null)
+        
+        return {
+          currentCatalog
+        }
+      }
+    }).mount('#app')
+  </script>
+</body>
+</html>
+
