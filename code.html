@@ -178,7 +178,7 @@
             VARIEDADES <span class="text-accent">{{ currentCatalog === 'tropical' ? 'MIX TROPICAL' : 'TERPENO TERROSO' }}</span>
           </h3>
           
-          <div v-if="currentCatalog === 'tropical'" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div v-show="currentCatalog === 'tropical'" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-300">
             <div class="relative catalog-item bg-blue-900 rounded-2xl overflow-hidden border border-accent">
               <div class="relative h-64">
                 <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2ee108ce-29e0-4d84-91a5-684b00177ace.png" 
@@ -188,8 +188,8 @@
                   <div class="text-xl font-bold">SUPER LEMON</div>
                 </div>
               </div>
-              <div class="p-6">
-                <div class="flex justify-between mb-4">
+              <div class="p-6 space-y-4">
+                <div class="flex justify-between">
                   <div class="text-accent font-bold">20% THC</div>
                   <div class="flex items-center">
                     <span class="mr-1">⭐</span> 4.8
@@ -198,6 +198,10 @@
                 <p class="text-sm opacity-75">
                   Dominante limón con notas de mango tropical. Efecto energizante y creativo.
                 </p>
+                <button @click.prevent="openModal('SUPER LEMON')" 
+                        class="w-full bg-accent text-deepblue px-4 py-2 rounded-lg font-bold hover:bg-cyan-400 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50">
+                  Ver detalles
+                </button>
               </div>
             </div>
             
@@ -246,7 +250,7 @@
             </div>
           </div>
           
-          <div v-if="currentCatalog === 'terroso'" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div v-show="currentCatalog === 'terroso'" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-300">
             <div class="relative catalog-item bg-blue-900 rounded-2xl overflow-hidden border border-green-400">
               <div class="relative h-64">
                 <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a3c8769f-7b54-4a37-bc20-641c3b50aa1a.png" 
@@ -416,17 +420,111 @@
         </div>
       </div>
     </footer>
+
+    <!-- Modal for strain details -->
+    <transition name="fade">
+      <div v-if="showModal" 
+           class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+           @click.self="closeModal"
+           @keydown.escape.window="closeModal" 
+           tabindex="0">
+        <div class="bg-slate-800 rounded-xl shadow-2xl p-8 max-w-lg w-full mx-4 relative border border-accent/20">
+          <!-- Close Button -->
+          <button @click="closeModal" 
+                  aria-label="Cerrar modal" 
+                  class="absolute top-4 right-4 text-accent hover:text-cyan-400 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          <!-- Modal Content -->
+          <div class="space-y-6">
+            <h3 class="text-3xl font-bold font-oxanium text-accent">Detalles de SUPER LEMON</h3>
+            
+            <div class="aspect-video rounded-lg overflow-hidden">
+              <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2ee108ce-29e0-4d84-91a5-684b00177ace.png" 
+                   alt="Detalle de Super Lemon" 
+                   class="w-full h-full object-cover">
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-slate-700/50 p-4 rounded-lg">
+                <h4 class="text-accent font-bold mb-2">THC</h4>
+                <p class="text-2xl font-bold">20%</p>
+              </div>
+              <div class="bg-slate-700/50 p-4 rounded-lg">
+                <h4 class="text-accent font-bold mb-2">Calificación</h4>
+                <p class="text-2xl font-bold flex items-center">4.8 <span class="ml-2 text-yellow-400">⭐</span></p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div>
+                <h4 class="text-accent font-bold mb-2">Perfil de Sabor</h4>
+                <p class="text-lg">Dominante limón con notas de mango tropical. Sabor cítrico intenso y refrescante.</p>
+              </div>
+              
+              <div>
+                <h4 class="text-accent font-bold mb-2">Efectos</h4>
+                <p class="text-lg">Efecto energizante y creativo. Ideal para actividades diurnas y momentos de inspiración.</p>
+              </div>
+
+              <div>
+                <h4 class="text-accent font-bold mb-2">Genética</h4>
+                <p class="text-lg">Híbrido dominante Sativa (60% Sativa / 40% Indica)</p>
+              </div>
+
+              <div>
+                <h4 class="text-accent font-bold mb-2">Tiempo de Floración</h4>
+                <p class="text-lg">8-9 semanas</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </transition>
   </div>
+
+  <style>
+    .fade-enter-active,
+    .fade-leave-active {
+      transition: opacity 0.3s ease;
+    }
+
+    .fade-enter-from,
+    .fade-leave-to {
+      opacity: 0;
+    }
+  </style>
 
   <script>
     const { createApp, ref } = Vue
     
     createApp({
       setup() {
-        const currentCatalog = ref(null)
+        // Initialize with 'tropical' to show the section by default
+        const currentCatalog = ref('tropical')
+        const showModal = ref(false)
+        const selectedStrain = ref(null)
+        
+        function openModal(strain) {
+          console.log('Opening modal for:', strain) // Debug log
+          selectedStrain.value = strain
+          showModal.value = true
+        }
+        
+        function closeModal() {
+          showModal.value = false
+          selectedStrain.value = null
+        }
         
         return {
-          currentCatalog
+          currentCatalog,
+          showModal,
+          selectedStrain,
+          openModal,
+          closeModal
         }
       }
     }).mount('#app')
