@@ -214,8 +214,8 @@
                   <div class="text-xl font-bold">TANGIE</div>
                 </div>
               </div>
-              <div class="p-6">
-                <div class="flex justify-between mb-4">
+              <div class="p-6 space-y-4">
+                <div class="flex justify-between">
                   <div class="text-accent font-bold">22% THC</div>
                   <div class="flex items-center">
                     <span class="mr-1">⭐</span> 4.7
@@ -224,6 +224,10 @@
                 <p class="text-sm opacity-75">
                   Intenso sabor a mandarina tropical con efectos euforizantes y estimulantes.
                 </p>
+                <button @click.prevent="openModal('TANGIE')" 
+                        class="w-full bg-accent text-deepblue px-4 py-2 rounded-lg font-bold hover:bg-cyan-400 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50">
+                  Ver detalles
+                </button>
               </div>
             </div>
             
@@ -236,8 +240,8 @@
                   <div class="text-xl font-bold">MANGO HAZE</div>
                 </div>
               </div>
-              <div class="p-6">
-                <div class="flex justify-between mb-4">
+              <div class="p-6 space-y-4">
+                <div class="flex justify-between">
                   <div class="text-accent font-bold">18% THC</div>
                   <div class="flex items-center">
                     <span class="mr-1">⭐</span> 4.6
@@ -246,6 +250,10 @@
                 <p class="text-sm opacity-75">
                   Combinación exótica de mangos tropicales con efecto cerebral claro y productivo.
                 </p>
+                <button @click.prevent="openModal('MANGO HAZE')" 
+                        class="w-full bg-accent text-deepblue px-4 py-2 rounded-lg font-bold hover:bg-cyan-400 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-opacity-50">
+                  Ver detalles
+                </button>
               </div>
             </div>
           </div>
@@ -260,8 +268,8 @@
                   <div class="text-xl font-bold">GELATO</div>
                 </div>
               </div>
-              <div class="p-6">
-                <div class="flex justify-between mb-4">
+              <div class="p-6 space-y-4">
+                <div class="flex justify-between">
                   <div class="text-green-400 font-bold">23% THC</div>
                   <div class="flex items-center">
                     <span class="mr-1">⭐</span> 4.9
@@ -270,6 +278,10 @@
                 <p class="text-sm opacity-75">
                   Perfil terroso con notas profundas de pino del Mediterráneo y cacao.
                 </p>
+                <button @click.prevent="openModal('GELATO')" 
+                        class="w-full bg-green-400 text-deepblue px-4 py-2 rounded-lg font-bold hover:bg-green-300 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+                  Ver detalles
+                </button>
               </div>
             </div>
             
@@ -282,8 +294,8 @@
                   <div class="text-xl font-bold">OG KUSH</div>
                 </div>
               </div>
-              <div class="p-6">
-                <div class="flex justify-between mb-4">
+              <div class="p-6 space-y-4">
+                <div class="flex justify-between">
                   <div class="text-green-400 font-bold">25% THC</div>
                   <div class="flex items-center">
                     <span class="mr-1">⭐</span> 4.9
@@ -292,6 +304,10 @@
                 <p class="text-sm opacity-75">
                   Combinación clásica de limon y pino con efecto corporal potente.
                 </p>
+                <button @click.prevent="openModal('OG KUSH')" 
+                        class="w-full bg-green-400 text-deepblue px-4 py-2 rounded-lg font-bold hover:bg-green-300 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+                  Ver detalles
+                </button>
               </div>
             </div>
             
@@ -304,8 +320,8 @@
                   <div class="text-xl font-bold">BUBBA KUSH</div>
                 </div>
               </div>
-              <div class="p-6">
-                <div class="flex justify-between mb-4">
+              <div class="p-6 space-y-4">
+                <div class="flex justify-between">
                   <div class="text-green-400 font-bold">21% THC</div>
                   <div class="flex items-center">
                     <span class="mr-1">⭐</span> 4.7
@@ -314,6 +330,10 @@
                 <p class="text-sm opacity-75">
                   Dominante notas de tierra húmeda con toque de café y cacao oscuro.
                 </p>
+                <button @click.prevent="openModal('BUBBA KUSH')" 
+                        class="w-full bg-green-400 text-deepblue px-4 py-2 rounded-lg font-bold hover:bg-green-300 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50">
+                  Ver detalles
+                </button>
               </div>
             </div>
           </div>
@@ -439,45 +459,49 @@
           </button>
 
           <!-- Modal Content -->
-          <div class="space-y-6">
-            <h3 class="text-3xl font-bold font-oxanium text-accent">Detalles de SUPER LEMON</h3>
+          <div v-if="selectedStrain" class="space-y-6">
+            <h3 class="text-3xl font-bold font-oxanium" :class="currentCatalog === 'tropical' ? 'text-accent' : 'text-green-400'">
+              Detalles de {{ selectedStrain }}
+            </h3>
             
             <div class="aspect-video rounded-lg overflow-hidden">
-              <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2ee108ce-29e0-4d84-91a5-684b00177ace.png" 
-                   alt="Detalle de Super Lemon" 
+              <img :src="strainDetails[selectedStrain].image" 
+                   :alt="'Detalle de ' + selectedStrain" 
                    class="w-full h-full object-cover">
             </div>
 
             <div class="grid grid-cols-2 gap-4">
               <div class="bg-slate-700/50 p-4 rounded-lg">
-                <h4 class="text-accent font-bold mb-2">THC</h4>
-                <p class="text-2xl font-bold">20%</p>
+                <h4 :class="currentCatalog === 'tropical' ? 'text-accent' : 'text-green-400'" class="font-bold mb-2">THC</h4>
+                <p class="text-2xl font-bold">{{ strainDetails[selectedStrain].thc }}</p>
               </div>
               <div class="bg-slate-700/50 p-4 rounded-lg">
-                <h4 class="text-accent font-bold mb-2">Calificación</h4>
-                <p class="text-2xl font-bold flex items-center">4.8 <span class="ml-2 text-yellow-400">⭐</span></p>
+                <h4 :class="currentCatalog === 'tropical' ? 'text-accent' : 'text-green-400'" class="font-bold mb-2">Calificación</h4>
+                <p class="text-2xl font-bold flex items-center">
+                  {{ strainDetails[selectedStrain].rating }} <span class="ml-2 text-yellow-400">⭐</span>
+                </p>
               </div>
             </div>
 
             <div class="space-y-4">
               <div>
-                <h4 class="text-accent font-bold mb-2">Perfil de Sabor</h4>
-                <p class="text-lg">Dominante limón con notas de mango tropical. Sabor cítrico intenso y refrescante.</p>
+                <h4 :class="currentCatalog === 'tropical' ? 'text-accent' : 'text-green-400'" class="font-bold mb-2">Perfil de Sabor</h4>
+                <p class="text-lg">{{ strainDetails[selectedStrain].flavor }}</p>
               </div>
               
               <div>
-                <h4 class="text-accent font-bold mb-2">Efectos</h4>
-                <p class="text-lg">Efecto energizante y creativo. Ideal para actividades diurnas y momentos de inspiración.</p>
+                <h4 :class="currentCatalog === 'tropical' ? 'text-accent' : 'text-green-400'" class="font-bold mb-2">Efectos</h4>
+                <p class="text-lg">{{ strainDetails[selectedStrain].effects }}</p>
               </div>
 
               <div>
-                <h4 class="text-accent font-bold mb-2">Genética</h4>
-                <p class="text-lg">Híbrido dominante Sativa (60% Sativa / 40% Indica)</p>
+                <h4 :class="currentCatalog === 'tropical' ? 'text-accent' : 'text-green-400'" class="font-bold mb-2">Genética</h4>
+                <p class="text-lg">{{ strainDetails[selectedStrain].genetics }}</p>
               </div>
 
               <div>
-                <h4 class="text-accent font-bold mb-2">Tiempo de Floración</h4>
-                <p class="text-lg">8-9 semanas</p>
+                <h4 :class="currentCatalog === 'tropical' ? 'text-accent' : 'text-green-400'" class="font-bold mb-2">Tiempo de Floración</h4>
+                <p class="text-lg">{{ strainDetails[selectedStrain].flowering }}</p>
               </div>
             </div>
           </div>
@@ -503,13 +527,68 @@
     
     createApp({
       setup() {
-        // Initialize with 'tropical' to show the section by default
         const currentCatalog = ref('tropical')
         const showModal = ref(false)
         const selectedStrain = ref(null)
         
+        const strainDetails = {
+          'SUPER LEMON': {
+            image: 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2ee108ce-29e0-4d84-91a5-684b00177ace.png',
+            thc: '20%',
+            rating: '4.8',
+            flavor: 'Dominante limón con notas de mango tropical. Sabor cítrico intenso y refrescante.',
+            effects: 'Efecto energizante y creativo. Ideal para actividades diurnas y momentos de inspiración.',
+            genetics: 'Híbrido dominante Sativa (60% Sativa / 40% Indica)',
+            flowering: '8-9 semanas'
+          },
+          'TANGIE': {
+            image: 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1c7acb1c-7258-46bd-9461-ef8380e2e4cb.png',
+            thc: '22%',
+            rating: '4.7',
+            flavor: 'Intenso sabor a mandarina tropical con efectos euforizantes y estimulantes.',
+            effects: 'Efecto cerebral energético y social. Perfecto para momentos creativos y sociales.',
+            genetics: 'Híbrido dominante Sativa (70% Sativa / 30% Indica)',
+            flowering: '9-10 semanas'
+          },
+          'MANGO HAZE': {
+            image: 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3c0dd2b3-31b0-4c8c-89ec-6a02f732bb72.png',
+            thc: '18%',
+            rating: '4.6',
+            flavor: 'Combinación exótica de mangos tropicales con efecto cerebral claro y productivo.',
+            effects: 'Efecto equilibrado y productivo. Excelente para la creatividad y concentración.',
+            genetics: 'Híbrido equilibrado (50% Sativa / 50% Indica)',
+            flowering: '9-10 semanas'
+          },
+          'GELATO': {
+            image: 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a3c8769f-7b54-4a37-bc20-641c3b50aa1a.png',
+            thc: '23%',
+            rating: '4.9',
+            flavor: 'Perfil terroso con notas profundas de pino del Mediterráneo y cacao.',
+            effects: 'Efecto relajante y eufórico. Ideal para momentos de descanso y meditación.',
+            genetics: 'Híbrido dominante Indica (60% Indica / 40% Sativa)',
+            flowering: '8-9 semanas'
+          },
+          'OG KUSH': {
+            image: 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0d612c53-6ba4-4b51-98f0-69b60aa792e2.png',
+            thc: '25%',
+            rating: '4.9',
+            flavor: 'Combinación clásica de limon y pino con efecto corporal potente.',
+            effects: 'Efecto potente y relajante. Perfecto para aliviar el estrés y la ansiedad.',
+            genetics: 'Híbrido dominante Indica (75% Indica / 25% Sativa)',
+            flowering: '8 semanas'
+          },
+          'BUBBA KUSH': {
+            image: 'https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e5e29b2f-a156-4b89-a8d1-bf0e7f6cb2ee.png',
+            thc: '21%',
+            rating: '4.7',
+            flavor: 'Dominante notas de tierra húmeda con toque de café y cacao oscuro.',
+            effects: 'Efecto sedante y relajante muscular. Excelente para el descanso nocturno.',
+            genetics: 'Indica pura (90% Indica / 10% Sativa)',
+            flowering: '8-9 semanas'
+          }
+        }
+        
         function openModal(strain) {
-          console.log('Opening modal for:', strain) // Debug log
           selectedStrain.value = strain
           showModal.value = true
         }
@@ -523,6 +602,7 @@
           currentCatalog,
           showModal,
           selectedStrain,
+          strainDetails,
           openModal,
           closeModal
         }
