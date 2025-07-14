@@ -729,3 +729,68 @@
 
           <div class="max-w-5xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script>
+    const { createApp, ref } = Vue;
+
+    createApp({
+      setup() {
+        const currentCatalog = ref('');
+        const showModal = ref(false);
+        const selectedStrain = ref(null);
+        const mobileMenuOpen = ref(false);
+        const ageVerified = ref(false);
+
+        const tropicalStrains = [
+          {
+            name: 'MIMOSA',
+            image: './mimosa.png',
+            potencia: 'Premium',
+            rating: 4.2,
+            flavor: 'Cítricos brillantes y limón con matices de frutas tropicales y fondo terroso'
+          },
+          // Add other tropical strains here
+        ];
+
+        const terrosoStrains = [
+          // Add terroso strains here  
+        ];
+
+        function openModal(strain) {
+          selectedStrain.value = strain;
+          showModal.value = true;
+        }
+
+        function closeModal() {
+          showModal.value = false;
+          selectedStrain.value = null;
+        }
+
+        function verifyAge(isAdult) {
+          ageVerified.value = isAdult;
+          if (!isAdult) {
+            window.location.href = 'https://www.google.com';
+          }
+        }
+
+        return {
+          currentCatalog,
+          showModal,
+          selectedStrain,
+          tropicalStrains,
+          terrosoStrains,
+          openModal,
+          closeModal,
+          mobileMenuOpen,
+          ageVerified,
+          verifyAge
+        };
+      }
+    }).mount('#app');
+  </script>
