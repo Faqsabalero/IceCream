@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -513,269 +514,6 @@
         </div>
       </section>
 
-      <!-- Top 3 Recomendadas section -->
-      <section
-        class="py-28 bg-gradient-to-b from-slate-900 to-deepblue relative overflow-hidden"
-        aria-labelledby="top3-title"
-      >
-        <div class="absolute inset-0 opacity-10 pointer-events-none" aria-hidden="true">
-          <div class="absolute top-24 left-16 w-40 h-40 bg-accent rounded-full blur-3xl animate-float"></div>
-          <div class="absolute bottom-24 right-16 w-52 h-52 bg-cyanglow rounded-full blur-3xl animate-float animation-delay-2000"></div>
-        </div>
-
-        <div class="container mx-auto px-6 max-w-7xl relative z-10">
-          <div class="text-center mb-20">
-            <div
-              class="inline-flex items-center bg-accent/20 border border-accent/30 rounded-full px-8 py-3 mb-6 text-accent font-semibold tracking-widest select-none shadow-neon-blue"
-              aria-hidden="true"
-            >
-              <i class="fas fa-crown text-yellowglow mr-3 drop-shadow-neon-yellow"></i>
-              SELECCIÓN DEL GROWER
-            </div>
-            <h2
-              id="top3-title"
-              class="text-6xl font-extrabold font-oxanium section-title gradient-text glow-effect"
-              tabindex="0"
-            >
-              TOP 3 RECOMENDADAS
-            </h2>
-            <p class="text-2xl text-slate-400 mt-6 max-w-3xl mx-auto drop-shadow-lg">
-              Las variedades más destacadas según nuestra experiencia de 20+ años
-            </p>
-          </div>
-
-          <div class="grid md:grid-cols-3 gap-12 max-w-7xl mx-auto">
-            <!-- Top 1 -->
-            <div
-              class="relative group transform hover:scale-105 transition-all duration-500 cursor-pointer"
-              tabindex="0"
-              aria-label="Top 1 strain OG Kush"
-            >
-              <div
-                class="absolute -inset-3 bg-gradient-to-r from-yellowglow via-accent to-cyanglow rounded-3xl blur-3xl opacity-40 group-hover:opacity-70 transition duration-500"
-                aria-hidden="true"
-              ></div>
-
-              <div
-                class="relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-10 h-full border-4 border-yellowglow/40 backdrop-blur-md shadow-neon-yellow"
-              >
-                <div
-                  class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-yellowglow to-yellow-600 text-black px-6 py-3 rounded-full font-extrabold text-base flex items-center shadow-neon-yellow"
-                  aria-hidden="true"
-                >
-                  <i class="fas fa-crown mr-3"></i>
-                  GANADOR
-                </div>
-
-                <div class="flex items-center justify-between mb-8 mt-6">
-                  <div class="flex items-center">
-                    <span
-                      class="text-7xl font-extrabold bg-gradient-to-r from-yellowglow to-yellow-600 bg-clip-text text-transparent select-none"
-                      >#1</span
-                    >
-                    <div class="ml-6">
-                      <div class="flex text-yellowglow text-2xl" aria-label="5 stars rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                      </div>
-                      <span class="text-sm text-yellowglow/80 select-none">4.9/5</span>
-                    </div>
-                  </div>
-                  <div
-                    class="bg-gradient-to-r from-yellowglow/30 to-yellow-600/30 border border-yellowglow/50 text-yellowglow px-6 py-3 rounded-2xl text-sm font-extrabold select-none shadow-neon-yellow"
-                  >
-                    Premium
-                  </div>
-                </div>
-
-                <h3 class="text-4xl font-extrabold mb-5 text-yellowglow select-none drop-shadow-neon-yellow">OG KUSH</h3>
-                <p class="text-slate-300 mb-10 leading-relaxed text-lg drop-shadow-lg">
-                  La elección perfecta para cultivadores experimentados. Potencia y sabor excepcionales que definen la excelencia.
-                </p>
-
-                <div class="space-y-5 mb-10 text-lg">
-                  <div class="flex items-center text-yellowglow/90">
-                    <i class="fas fa-clock mr-4 w-6 drop-shadow-neon-yellow"></i>
-                    <span>8 semanas floración</span>
-                  </div>
-                  <div class="flex items-center text-green-400/90">
-                    <i class="fas fa-leaf mr-4 w-6 drop-shadow-neon-green"></i>
-                    <span>Híbrido dominante Indica</span>
-                  </div>
-                  <div class="flex items-center text-yellowglow/90">
-                    <i class="fas fa-award mr-4 w-6 drop-shadow-neon-yellow"></i>
-                    <span>Más vendida 2023</span>
-                  </div>
-                </div>
-
-                <button
-                  @click="openModal('OG KUSH')"
-                  class="w-full bg-yellowglow hover:bg-yellow-500 text-deepblue px-8 py-4 rounded-3xl font-extrabold text-xl transition-all duration-300 transform hover:scale-110 shadow-neon-yellow focus:outline-none focus:ring-4 focus:ring-yellowglow focus:ring-opacity-60"
-                  aria-label="Ver detalles de OG Kush"
-                >
-                  Ver detalles
-                </button>
-              </div>
-            </div>
-
-            <!-- Top 2 -->
-            <div
-              class="relative group transform hover:scale-105 transition-all duration-500 cursor-pointer"
-              tabindex="0"
-              aria-label="Top 2 strain Gelato"
-            >
-              <div
-                class="absolute -inset-3 bg-gradient-to-r from-greenglows via-accent to-cyanglow rounded-3xl blur-3xl opacity-30 group-hover:opacity-60 transition duration-500"
-                aria-hidden="true"
-              ></div>
-
-              <div
-                class="relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-10 h-full border-4 border-greenglows/40 backdrop-blur-md shadow-neon-green"
-              >
-                <div
-                  class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-greenglows to-green-600 text-white px-6 py-3 rounded-full font-extrabold text-base flex items-center shadow-neon-green"
-                  aria-hidden="true"
-                >
-                  <i class="fas fa-medal mr-3"></i>
-                  PLATA
-                </div>
-
-                <div class="flex items-center justify-between mb-8 mt-6">
-                  <div class="flex items-center">
-                    <span
-                      class="text-7xl font-extrabold bg-gradient-to-r from-greenglows to-green-600 bg-clip-text text-transparent select-none"
-                      >#2</span
-                    >
-                    <div class="ml-6">
-                      <div class="flex text-green-400 text-2xl" aria-label="5 stars rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                      </div>
-                      <span class="text-sm text-green-400/80 select-none">4.9/5</span>
-                    </div>
-                  </div>
-                  <div
-                    class="bg-gradient-to-r from-greenglows/30 to-green-600/30 border border-greenglows/50 text-green-400 px-6 py-3 rounded-2xl text-sm font-extrabold select-none shadow-neon-green"
-                  >
-                    Calidad
-                  </div>
-                </div>
-
-                <h3 class="text-4xl font-extrabold mb-5 text-green-400 select-none drop-shadow-neon-green">GELATO</h3>
-                <p class="text-slate-300 mb-10 leading-relaxed text-lg drop-shadow-lg">
-                  Perfecta combinación de sabor y potencia. Ideal para cultivo indoor con resultados consistentes.
-                </p>
-
-                <div class="space-y-5 mb-10 text-lg">
-                  <div class="flex items-center text-cyanglow/90">
-                    <i class="fas fa-clock mr-4 w-6 drop-shadow-neon-blue"></i>
-                    <span>8-9 semanas floración</span>
-                  </div>
-                  <div class="flex items-center text-green-400/90">
-                    <i class="fas fa-leaf mr-4 w-6 drop-shadow-neon-green"></i>
-                    <span>Híbrido equilibrado</span>
-                  </div>
-                  <div class="flex items-center text-blue-400/90">
-                    <i class="fas fa-home mr-4 w-6 drop-shadow-neon-blue"></i>
-                    <span>Ideal para indoor</span>
-                  </div>
-                </div>
-
-                <button
-                  @click="openModal('GELATO')"
-                  class="w-full bg-green-400 hover:bg-green-500 text-deepblue px-8 py-4 rounded-3xl font-extrabold text-xl transition-all duration-300 transform hover:scale-110 shadow-neon-green focus:outline-none focus:ring-4 focus:ring-greenglows focus:ring-opacity-60"
-                  aria-label="Ver detalles de Gelato"
-                >
-                  Ver detalles
-                </button>
-              </div>
-            </div>
-
-            <!-- Top 3 -->
-            <div
-              class="relative group transform hover:scale-105 transition-all duration-500 cursor-pointer"
-              tabindex="0"
-              aria-label="Top 3 strain Tangie"
-            >
-              <div
-                class="absolute -inset-3 bg-gradient-to-r from-amberglow via-accent to-cyanglow rounded-3xl blur-3xl opacity-30 group-hover:opacity-60 transition duration-500"
-                aria-hidden="true"
-              ></div>
-
-              <div
-                class="relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-10 h-full border-4 border-amberglow/40 backdrop-blur-md shadow-neon-amber"
-              >
-                <div
-                  class="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-amberglow to-amber-700 text-white px-6 py-3 rounded-full font-extrabold text-base flex items-center shadow-neon-amber"
-                  aria-hidden="true"
-                >
-                  <i class="fas fa-medal mr-3"></i>
-                  BRONCE
-                </div>
-
-                <div class="flex items-center justify-between mb-8 mt-6">
-                  <div class="flex items-center">
-                    <span
-                      class="text-7xl font-extrabold bg-gradient-to-r from-amberglow to-amber-700 bg-clip-text text-transparent select-none"
-                      >#3</span
-                    >
-                    <div class="ml-6">
-                      <div class="flex text-amberglow text-2xl" aria-label="4.5 stars rating">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                      </div>
-                      <span class="text-sm text-amberglow/80 select-none">4.7/5</span>
-                    </div>
-                  </div>
-                  <div
-                    class="bg-gradient-to-r from-amberglow/30 to-amber-700/30 border border-amberglow/50 text-amberglow px-6 py-3 rounded-2xl text-sm font-extrabold select-none shadow-neon-amber"
-                  >
-                    Potente
-                  </div>
-                </div>
-
-                <h3 class="text-4xl font-extrabold mb-5 text-amberglow select-none drop-shadow-neon-amber">TANGIE</h3>
-                <p class="text-slate-300 mb-10 leading-relaxed text-lg drop-shadow-lg">
-                  Excelente para principiantes. Alta producción y resistencia a plagas con sabores tropicales únicos.
-                </p>
-
-                <div class="space-y-5 mb-10 text-lg">
-                  <div class="flex items-center text-cyanglow/90">
-                    <i class="fas fa-clock mr-4 w-6 drop-shadow-neon-blue"></i>
-                    <span>9-10 semanas floración</span>
-                  </div>
-                  <div class="flex items-center text-green-400/90">
-                    <i class="fas fa-leaf mr-4 w-6 drop-shadow-neon-green"></i>
-                    <span>Sativa dominante</span>
-                  </div>
-                  <div class="flex items-center text-green-500/90">
-                    <i class="fas fa-seedling mr-4 w-6 drop-shadow-neon-green"></i>
-                    <span>Ideal principiantes</span>
-                  </div>
-                </div>
-
-                <button
-                  @click="openModal('TANGIE')"
-                  class="w-full bg-amberglow hover:bg-amber-600 text-deepblue px-8 py-4 rounded-3xl font-extrabold text-xl transition-all duration-300 transform hover:scale-110 shadow-neon-amber focus:outline-none focus:ring-4 focus:ring-amberglow focus:ring-opacity-60"
-                  aria-label="Ver detalles de Tangie"
-                >
-                  Ver detalles
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- Catálogo section -->
       <section id="catalogo" class="py-28 bg-gradient-to-b from-slate-900 to-deepblue" aria-labelledby="catalogo-title">
         <div class="container mx-auto px-6 max-w-7xl">
@@ -878,14 +616,19 @@
               class="grid md:grid-cols-2 lg:grid-cols-3 gap-12 transition-all duration-300"
             >
               <div
+                v-for="strain in tropicalStrains"
+                :key="strain.name"
                 class="relative catalog-item glass-effect rounded-3xl overflow-hidden border border-accent/30 hover:border-accent/60 focus-within:ring-4 focus-within:ring-accent focus-within:ring-opacity-60 shadow-neon-blue"
                 tabindex="0"
-                aria-label="Variedad Super Lemon"
+                :aria-label="'Variedad ' + strain.name"
+                @click="openModal(strain.name)"
+                @keydown.enter.prevent="openModal(strain.name)"
+                @keydown.space.prevent="openModal(strain.name)"
               >
                 <div class="relative h-72 rounded-3xl overflow-hidden shadow-lg">
                   <img
-                    src="https://placehold.co/600x384/png?text=Super+Lemon+-+variedad+c%C3%ADtrica+intensa"
-                    alt="Super Lemon - variedad cítrica intensa con limones y hojas verdes"
+                    :src="strain.image"
+                    :alt="strain.name + ' - ' + strain.flavor"
                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
                     decoding="async"
@@ -893,104 +636,23 @@
                   <div
                     class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent py-5 px-8 rounded-b-3xl"
                   >
-                    <div class="text-2xl font-extrabold text-white drop-shadow-neon-blue select-none">SUPER LEMON</div>
+                    <div class="text-2xl font-extrabold text-white drop-shadow-neon-blue select-none">{{ strain.name }}</div>
                   </div>
                 </div>
                 <div class="p-8 space-y-6">
                   <div class="flex justify-between items-center text-lg font-semibold text-accent select-none">
-                    <span>Premium</span>
-                    <div class="flex items-center" aria-label="Calificación 4.8 estrellas">
-                      <i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star"></i>
-                      <span class="ml-2 text-white font-bold">4.8</span>
+                    <span>{{ strain.potencia }}</span>
+                    <div class="flex items-center" :aria-label="'Calificación ' + strain.rating + ' estrellas'">
+                      <i class="fas fa-star mr-1" v-for="n in Math.floor(strain.rating)" :key="n"></i>
+                      <i class="fas fa-star-half-alt" v-if="strain.rating % 1 >= 0.5"></i>
+                      <span class="ml-2 text-white font-bold">{{ strain.rating }}</span>
                     </div>
                   </div>
-                  <p class="text-slate-300 text-base leading-relaxed select-none">
-                    Dominante limón con notas de mango tropical. Efecto energizante y creativo.
-                  </p>
+                  <p class="text-slate-300 text-base leading-relaxed select-none">{{ strain.flavor }}</p>
                   <button
-                    @click.prevent="openModal('SUPER LEMON')"
+                    @click.prevent="openModal(strain.name)"
                     class="w-full bg-gradient-to-r from-cyanglow to-accent text-deepblue px-6 py-3 rounded-3xl font-extrabold text-lg shadow-neon-blue hover:brightness-110 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyanglow focus:ring-opacity-60"
-                    aria-label="Ver detalles de Super Lemon"
-                  >
-                    Ver detalles
-                  </button>
-                </div>
-              </div>
-
-              <div
-                class="relative catalog-item glass-effect rounded-3xl overflow-hidden border border-accent/30 hover:border-accent/60 focus-within:ring-4 focus-within:ring-accent focus-within:ring-opacity-60 shadow-neon-blue"
-                tabindex="0"
-                aria-label="Variedad Tangie"
-              >
-                <div class="relative h-72 rounded-3xl overflow-hidden shadow-lg">
-                  <img
-                    src="https://placehold.co/600x384/png?text=Tangie+-+sabor+a+mandarina+reci%C3%A9n+pelada"
-                    alt="Tangie - sabor a mandarina recién pelada con frutas y hojas"
-                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div
-                    class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent py-5 px-8 rounded-b-3xl"
-                  >
-                    <div class="text-2xl font-extrabold text-white drop-shadow-neon-blue select-none">TANGIE</div>
-                  </div>
-                </div>
-                <div class="p-8 space-y-6">
-                  <div class="flex justify-between items-center text-lg font-semibold text-accent select-none">
-                    <span>Potente</span>
-                    <div class="flex items-center" aria-label="Calificación 4.7 estrellas">
-                      <i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star-half-alt"></i>
-                      <span class="ml-2 text-white font-bold">4.7</span>
-                    </div>
-                  </div>
-                  <p class="text-slate-300 text-base leading-relaxed select-none">
-                    Intenso sabor a mandarina tropical con efectos euforizantes y estimulantes.
-                  </p>
-                  <button
-                    @click.prevent="openModal('TANGIE')"
-                    class="w-full bg-gradient-to-r from-cyanglow to-accent text-deepblue px-6 py-3 rounded-3xl font-extrabold text-lg shadow-neon-blue hover:brightness-110 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyanglow focus:ring-opacity-60"
-                    aria-label="Ver detalles de Tangie"
-                  >
-                    Ver detalles
-                  </button>
-                </div>
-              </div>
-
-              <div
-                class="relative catalog-item glass-effect rounded-3xl overflow-hidden border border-accent/30 hover:border-accent/60 focus-within:ring-4 focus-within:ring-accent focus-within:ring-opacity-60 shadow-neon-blue"
-                tabindex="0"
-                aria-label="Variedad Mimosa"
-              >
-                <div class="relative h-72 rounded-3xl overflow-hidden shadow-lg">
-                  <img
-                    src="./mimosa.png"
-                    alt="Mimosa - variedad cítrica con limón y frutas tropicales"
-                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div
-                    class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent py-5 px-8 rounded-b-3xl"
-                  >
-                    <div class="text-2xl font-extrabold text-white drop-shadow-neon-blue select-none">MIMOSA</div>
-                  </div>
-                </div>
-                <div class="p-8 space-y-6">
-                  <div class="flex justify-between items-center text-lg font-semibold text-accent select-none">
-                    <span>Élite</span>
-                    <div class="flex items-center" aria-label="Calificación 4.5 estrellas">
-                      <i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star-half-alt"></i>
-                      <span class="ml-2 text-white font-bold">4.5</span>
-                    </div>
-                  </div>
-                  <p class="text-slate-300 text-base leading-relaxed select-none">
-                    Cítricos brillantes y limón con matices de frutas tropicales y fondo terroso.
-                  </p>
-                  <button
-                    @click.prevent="openModal('MIMOSA')"
-                    class="w-full bg-gradient-to-r from-cyanglow to-accent text-deepblue px-6 py-3 rounded-3xl font-extrabold text-lg shadow-neon-blue hover:brightness-110 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyanglow focus:ring-opacity-60"
-                    aria-label="Ver detalles de Mimosa"
+                    :aria-label="'Ver detalles de ' + strain.name"
                   >
                     Ver detalles
                   </button>
@@ -1003,14 +665,19 @@
               class="grid md:grid-cols-2 lg:grid-cols-3 gap-12 transition-all duration-300"
             >
               <div
+                v-for="strain in terrosoStrains"
+                :key="strain.name"
                 class="relative catalog-item glass-effect rounded-3xl overflow-hidden border border-green-400/30 hover:border-green-400/60 focus-within:ring-4 focus-within:ring-green-400 focus-within:ring-opacity-60 shadow-neon-green"
                 tabindex="0"
-                aria-label="Variedad Gelato"
+                :aria-label="'Variedad ' + strain.name"
+                @click="openModal(strain.name)"
+                @keydown.enter.prevent="openModal(strain.name)"
+                @keydown.space.prevent="openModal(strain.name)"
               >
                 <div class="relative h-72 rounded-3xl overflow-hidden shadow-lg">
                   <img
-                    src="https://placehold.co/600x384/png?text=Gelato+-+variedad+terrosa+con+notas+de+bosque"
-                    alt="Gelato - variedad terrosa con notas de bosque y hojas verdes"
+                    :src="strain.image"
+                    :alt="strain.name + ' - ' + strain.flavor"
                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
                     decoding="async"
@@ -1018,104 +685,23 @@
                   <div
                     class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent py-5 px-8 rounded-b-3xl"
                   >
-                    <div class="text-2xl font-extrabold text-white drop-shadow-neon-green select-none">GELATO</div>
+                    <div class="text-2xl font-extrabold text-white drop-shadow-neon-green select-none">{{ strain.name }}</div>
                   </div>
                 </div>
                 <div class="p-8 space-y-6">
                   <div class="flex justify-between items-center text-lg font-semibold text-green-400 select-none">
-                    <span>Premium</span>
-                    <div class="flex items-center" aria-label="Calificación 4.9 estrellas">
-                      <i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star"></i>
-                      <span class="ml-2 text-white font-bold">4.9</span>
+                    <span>{{ strain.potencia }}</span>
+                    <div class="flex items-center" :aria-label="'Calificación ' + strain.rating + ' estrellas'">
+                      <i class="fas fa-star mr-1" v-for="n in Math.floor(strain.rating)" :key="n"></i>
+                      <i class="fas fa-star-half-alt" v-if="strain.rating % 1 >= 0.5"></i>
+                      <span class="ml-2 text-white font-bold">{{ strain.rating }}</span>
                     </div>
                   </div>
-                  <p class="text-slate-300 text-base leading-relaxed select-none">
-                    Perfil terroso con notas profundas de pino del Mediterráneo y cacao.
-                  </p>
+                  <p class="text-slate-300 text-base leading-relaxed select-none">{{ strain.flavor }}</p>
                   <button
-                    @click.prevent="openModal('GELATO')"
-                    class="w-full bg-gradient-to-r from-greenglows to-green-400 text-deepblue px-6 py-3 rounded-3xl font-extrabold text-lg shadow-neon-green hover:brightness-110 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-greenglows focus:ring-opacity-60"
-                    aria-label="Ver detalles de Gelato"
-                  >
-                    Ver detalles
-                  </button>
-                </div>
-              </div>
-
-              <div
-                class="relative catalog-item glass-effect rounded-3xl overflow-hidden border border-green-400/30 hover:border-green-400/60 focus-within:ring-4 focus-within:ring-green-400 focus-within:ring-opacity-60 shadow-neon-green"
-                tabindex="0"
-                aria-label="Variedad OG Kush"
-              >
-                <div class="relative h-72 rounded-3xl overflow-hidden shadow-lg">
-                  <img
-                    src="https://placehold.co/600x384/png?text=OG+Kush+-+cl%C3%A1sico+terroso+con+notas+c%C3%ADtricas"
-                    alt="OG Kush - clásico terroso con notas cítricas y hojas verdes"
-                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div
-                    class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent py-5 px-8 rounded-b-3xl"
-                  >
-                    <div class="text-2xl font-extrabold text-white drop-shadow-neon-green select-none">OG KUSH</div>
-                  </div>
-                </div>
-                <div class="p-8 space-y-6">
-                  <div class="flex justify-between items-center text-lg font-semibold text-green-400 select-none">
-                    <span>Élite</span>
-                    <div class="flex items-center" aria-label="Calificación 4.9 estrellas">
-                      <i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star"></i>
-                      <span class="ml-2 text-white font-bold">4.9</span>
-                    </div>
-                  </div>
-                  <p class="text-slate-300 text-base leading-relaxed select-none">
-                    Combinación clásica de limon y pino con efecto corporal potente.
-                  </p>
-                  <button
-                    @click.prevent="openModal('OG KUSH')"
-                    class="w-full bg-gradient-to-r from-greenglows to-green-400 text-deepblue px-6 py-3 rounded-3xl font-extrabold text-lg shadow-neon-green hover:brightness-110 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-greenglows focus:ring-opacity-60"
-                    aria-label="Ver detalles de OG Kush"
-                  >
-                    Ver detalles
-                  </button>
-                </div>
-              </div>
-
-              <div
-                class="relative catalog-item glass-effect rounded-3xl overflow-hidden border border-green-400/30 hover:border-green-400/60 focus-within:ring-4 focus-within:ring-green-400 focus-within:ring-opacity-60 shadow-neon-green"
-                tabindex="0"
-                aria-label="Variedad Bubba Kush"
-              >
-                <div class="relative h-72 rounded-3xl overflow-hidden shadow-lg">
-                  <img
-                    src="https://placehold.co/600x384/png?text=Bubba+Kush+-+tierra+h%C3%Bameda+con+notas+de+caf%C3%A9"
-                    alt="Bubba Kush - tierra húmeda con notas de café y cacao oscuro"
-                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div
-                    class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent py-5 px-8 rounded-b-3xl"
-                  >
-                    <div class="text-2xl font-extrabold text-white drop-shadow-neon-green select-none">BUBBA KUSH</div>
-                  </div>
-                </div>
-                <div class="p-8 space-y-6">
-                  <div class="flex justify-between items-center text-lg font-semibold text-green-400 select-none">
-                    <span>Potente</span>
-                    <div class="flex items-center" aria-label="Calificación 4.7 estrellas">
-                      <i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star-half-alt mr-1"></i><i class="far fa-star"></i>
-                      <span class="ml-2 text-white font-bold">4.7</span>
-                    </div>
-                  </div>
-                  <p class="text-slate-300 text-base leading-relaxed select-none">
-                    Dominante notas de tierra húmeda con toque de café y cacao oscuro.
-                  </p>
-                  <button
-                    @click.prevent="openModal('BUBBA KUSH')"
-                    class="w-full bg-gradient-to-r from-greenglows to-green-400 text-deepblue px-6 py-3 rounded-3xl font-extrabold text-lg shadow-neon-green hover:brightness-110 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-greenglows focus:ring-opacity-60"
-                    aria-label="Ver detalles de Bubba Kush"
+                    @click.prevent="openModal(strain.name)"
+                    class="w-full bg-gradient-to-r from-green-400 to-greenglows text-deepblue px-6 py-3 rounded-3xl font-extrabold text-lg shadow-neon-green hover:brightness-110 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-greenglows focus:ring-opacity-60"
+                    :aria-label="'Ver detalles de ' + strain.name"
                   >
                     Ver detalles
                   </button>
@@ -1143,367 +729,3 @@
 
           <div class="max-w-5xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
-              <!-- Instagram Icon -->
-              <a
-                href="https://instagram.com/icecream_genetics"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="group flex flex-col items-center justify-center p-10 rounded-3xl bg-slate-800/60 border border-slate-700 hover:border-accent transition-all duration-300 hover:-translate-y-3 shadow-neon-blue focus:outline-none focus:ring-4 focus:ring-accent focus:ring-opacity-60"
-                aria-label="Instagram Icecream Genetics"
-              >
-                <div
-                  class="w-24 h-24 rounded-full bg-slate-700 flex items-center justify-center mb-6 group-hover:bg-accent/30 transition-colors shadow-neon-blue"
-                >
-                  <i class="fab fa-instagram text-5xl text-accent" aria-hidden="true"></i>
-                </div>
-                <h3 class="text-2xl font-extrabold text-white mb-3 select-none drop-shadow-neon-blue">Instagram</h3>
-                <p class="text-slate-400 text-center select-none text-lg drop-shadow-lg">
-                  Síguenos para novedades y eventos
-                </p>
-              </a>
-
-              <!-- Web Conectar Med Icon -->
-              <a
-                href="https://conectarmed.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="group flex flex-col items-center justify-center p-10 rounded-3xl bg-slate-800/60 border border-slate-700 hover:border-accent transition-all duration-300 hover:-translate-y-3 shadow-neon-green focus:outline-none focus:ring-4 focus:ring-green-400 focus:ring-opacity-60"
-                aria-label="Sitio web Conectar Med"
-              >
-                <div
-                  class="w-24 h-24 rounded-full bg-slate-700 flex items-center justify-center mb-6 group-hover:bg-green-400/30 transition-colors shadow-neon-green"
-                >
-                  <i class="fas fa-globe text-5xl text-green-400" aria-hidden="true"></i>
-                </div>
-                <h3 class="text-2xl font-extrabold text-white mb-3 select-none drop-shadow-neon-green">Conectar Med</h3>
-                <p class="text-slate-400 text-center select-none text-lg drop-shadow-lg">Visita nuestra web asociada</p>
-              </a>
-
-              <!-- Email Icon -->
-              <a
-                href="mailto:genetica@icecreamgenetics.com"
-                class="group flex flex-col items-center justify-center p-10 rounded-3xl bg-slate-800/60 border border-slate-700 hover:border-accent transition-all duration-300 hover:-translate-y-3 shadow-neon-amber focus:outline-none focus:ring-4 focus:ring-amberglow focus:ring-opacity-60"
-                aria-label="Enviar email a Icecream Genetics"
-              >
-                <div
-                  class="w-24 h-24 rounded-full bg-slate-700 flex items-center justify-center mb-6 group-hover:bg-amberglow/30 transition-colors shadow-neon-amber"
-                >
-                  <i class="fas fa-envelope text-5xl text-amberglow" aria-hidden="true"></i>
-                </div>
-                <h3 class="text-2xl font-extrabold text-white mb-3 select-none drop-shadow-neon-amber">Email</h3>
-                <p class="text-slate-400 text-center select-none text-lg drop-shadow-lg">Contáctanos directamente</p>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Footer -->
-      <footer class="py-16 bg-slate-950 border-t border-slate-800" role="contentinfo">
-        <div class="container mx-auto px-6 text-center max-w-4xl">
-          <div class="mb-8">
-            <div
-              class="text-3xl font-oxanium font-extrabold tracking-widest inline-block select-none text-white drop-shadow-neon-blue"
-              aria-label="Icecream Genetics logo"
-            >
-              ICE<span class="text-accent">CREAM</span> GENETICS
-            </div>
-          </div>
-          <p class="text-slate-400 max-w-lg mx-auto mb-12 select-none text-lg drop-shadow-lg">
-            Genética premium para cultivadores exigentes. © 2023 Todos los derechos reservados
-          </p>
-          <div class="flex justify-center space-x-10 text-slate-400">
-            <a href="#" class="hover:text-accent transition drop-shadow-lg" aria-label="Facebook">
-              <svg
-                class="w-7 h-7"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <path
-                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12z"
-                />
-              </svg>
-            </a>
-            <a href="#" class="hover:text-accent transition drop-shadow-lg" aria-label="LinkedIn">
-              <svg
-                class="w-7 h-7"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <path
-                  d="M12 2C6.477 2 2 6.477 2 12c0 5.523 4.477 10 10 10 5.523 0 10-4.477 10-10 0-5.523-4.477-10-10-10zm3.611 8.667h-1.744c-.459 0-.733.594-.733 1.179v1.343h2.416l-.282 2.186h-2.134v5.576H9.078v-5.576H7v-2.186h2.078V11.1c0-1.92 1.161-3.054 3.026-3.054.907 0 1.597.062 1.814.09v2.531z"
-                />
-              </svg>
-            </a>
-            <a href="#" class="hover:text-accent transition drop-shadow-lg" aria-label="YouTube">
-              <svg
-                class="w-7 h-7"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <path
-                  d="M21.55 4.256H2.45A2.45 2.45 0 0 0 0 6.706v10.59a2.45 2.45 0 0 0 2.45 2.448h19.1A2.45 2.45 0 0 0 24 17.296V6.705a2.45 2.45 0 0 0-2.45-2.448zm-18.05 2.73h2.79L9.07 13.7 5.57 6.984h2.278l1.618 4.066c.105.267.198.613.146.613a.343.343 0 0 1 .019-.07L12.7 6.985h2.736l-3.423 6.56 3.283 6.763h-2.384l-2.27-4.087c-.105-.264-.262-.689-.275-.693.017.023.063.167.113.314l.584 1.448-2.026 4.018H6.18l.03-.06 2.952-5.94-3.69-6.597zm16.234 8.84H14.89l-1.618-4.3 5.216-4.348v8.648zm-4.19-10.18l-2.21 1.927-1.578-1.927h3.788zm3.35.925l-5.812 4.76 1.832 4.862h3.98v-9.622z"
-                />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </footer>
-
-      <!-- Modal for strain details -->
-      <transition name="fade">
-        <div
-          v-if="showModal"
-          class="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md p-6"
-          @click.self="closeModal"
-          @keydown.escape.window="closeModal"
-          tabindex="0"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby="modal-title"
-        >
-          <div
-            class="bg-slate-900 rounded-3xl shadow-2xl max-w-3xl w-full mx-auto relative border border-accent/40 focus:outline-none focus:ring-4 focus:ring-accent focus:ring-opacity-60 modal-scroll-container"
-            tabindex="0"
-            @keydown.stop
-          >
-            <!-- Close Button -->
-            <button
-              @click.prevent="closeModal"
-              aria-label="Cerrar modal"
-              class="absolute top-5 right-5 text-accent hover:text-cyanglow transition-colors focus:outline-none focus:ring-2 focus:ring-cyanglow focus:ring-opacity-70 rounded-full p-2 bg-slate-800/70 hover:bg-slate-800/90 shadow-neon-blue"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-7 w-7"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                aria-hidden="true"
-                focusable="false"
-              >
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-
-            <!-- Modal Content -->
-            <div v-if="selectedStrain" class="space-y-8 p-8 text-white">
-              <h3
-                id="modal-title"
-                class="text-4xl font-extrabold font-oxanium"
-                :class="currentCatalog === 'tropical' ? 'text-cyanglow' : 'text-green-400'"
-                tabindex="0"
-                style="text-shadow: 0 0 10px rgba(56, 189, 248, 0.8);"
-              >
-                Detalles de {{ selectedStrain }}
-              </h3>
-
-              <div class="aspect-video rounded-2xl overflow-hidden shadow-lg ring-2 ring-accent">
-                <img
-                  :src="strainDetails[selectedStrain].image"
-                  :alt="'Detalle de ' + selectedStrain + ' variedad de cannabis con características visuales representativas'"
-                  class="w-full h-full object-cover"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
-
-              <div class="grid grid-cols-2 gap-6">
-                <div class="bg-slate-800/70 p-6 rounded-2xl shadow-neon-blue ring-1 ring-cyanglow">
-                  <h4
-                    :class="currentCatalog === 'tropical' ? 'text-cyanglow' : 'text-green-400'"
-                    class="font-extrabold mb-3 select-none text-lg"
-                  >
-                    Potencia
-                  </h4>
-                  <p class="text-3xl font-extrabold select-none">{{ strainDetails[selectedStrain].potencia }}</p>
-                </div>
-                <div class="bg-slate-800/70 p-6 rounded-2xl shadow-neon-blue ring-1 ring-cyanglow">
-                  <h4
-                    :class="currentCatalog === 'tropical' ? 'text-cyanglow' : 'text-green-400'"
-                    class="font-extrabold mb-3 select-none text-lg"
-                  >
-                    Calificación
-                  </h4>
-                  <p class="text-3xl font-extrabold flex items-center select-none">
-                    {{ strainDetails[selectedStrain].rating }}
-                    <span class="ml-3 text-yellowglow drop-shadow-neon-yellow" aria-hidden="true">⭐</span>
-                  </p>
-                </div>
-              </div>
-
-              <div class="space-y-6 text-lg leading-relaxed text-slate-300">
-                <div>
-                  <h4
-                    :class="currentCatalog === 'tropical' ? 'text-cyanglow' : 'text-green-400'"
-                    class="font-extrabold mb-2 select-none"
-                  >
-                    Perfil de Sabor
-                  </h4>
-                  <p>{{ strainDetails[selectedStrain].flavor }}</p>
-                </div>
-
-                <div>
-                  <h4
-                    :class="currentCatalog === 'tropical' ? 'text-cyanglow' : 'text-green-400'"
-                    class="font-extrabold mb-2 select-none"
-                  >
-                    Efectos
-                  </h4>
-                  <p>{{ strainDetails[selectedStrain].effects }}</p>
-                </div>
-
-                <div>
-                  <h4
-                    :class="currentCatalog === 'tropical' ? 'text-cyanglow' : 'text-green-400'"
-                    class="font-extrabold mb-2 select-none"
-                  >
-                    Genética
-                  </h4>
-                  <p>{{ strainDetails[selectedStrain].genetics }}</p>
-                </div>
-
-                <div>
-                  <h4
-                    :class="currentCatalog === 'tropical' ? 'text-cyanglow' : 'text-green-400'"
-                    class="font-extrabold mb-2 select-none"
-                  >
-                    Tiempo de Floración
-                  </h4>
-                  <p>{{ strainDetails[selectedStrain].flowering }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </transition>
-    </div>
-  </div>
-
-  <script>
-    const { createApp, ref } = Vue;
-
-    createApp({
-      setup() {
-        const currentCatalog = ref('');
-        const showModal = ref(false);
-        const selectedStrain = ref(null);
-        const mobileMenuOpen = ref(false);
-        const ageVerified = ref(false);
-
-        const strainDetails = {
-          'SUPER LEMON': {
-            image:
-              'https://placehold.co/600x384/png?text=Super+Lemon+-+variedad+c%C3%ADtrica+intensa',
-            potencia: 'Premium',
-            rating: '4.8',
-            flavor:
-              'Dominante limón con notas de mango tropical. Sabor cítrico intenso y refrescante.',
-            effects:
-              'Efecto energizante y creativo. Ideal para actividades diurnas y momentos de inspiración.',
-            genetics: 'Híbrido dominante Sativa (60% Sativa / 40% Indica)',
-            flowering: '8-9 semanas',
-          },
-          TANGIE: {
-            image:
-              'https://placehold.co/600x384/png?text=Tangie+-+sabor+a+mandarina+reci%C3%A9n+pelada',
-            potencia: 'Potente',
-            rating: '4.7',
-            flavor:
-              'Intenso sabor a mandarina tropical con efectos euforizantes y estimulantes.',
-            effects:
-              'Efecto cerebral energético y social. Perfecto para momentos creativos y sociales.',
-            genetics: 'Híbrido dominante Sativa (70% Sativa / 30% Indica)',
-            flowering: '9-10 semanas',
-          },
-          'MIMOSA': {
-            image:
-              './mimosa.png',
-            potencia: 'Élite',
-            rating: '4.5',
-            flavor:
-              'Cítricos brillantes y limón con matices de frutas tropicales y fondo terroso; una auténtica "bomba refrescante".',
-            effects:
-              'Eufórica y energética a dosis moderadas; en cantidades altas ofrece una relajación corporal profunda que alivia estrés y ansiedad.',
-            genetics: 'Purple Punch × Clementine — híbrido dominante Sativa 70% / Indica 30%',
-            flowering: '9-10 semanas en interior · cosecha exterior a mediados de octubre',
-          },
-          GELATO: {
-            image:
-              'https://placehold.co/600x384/png?text=Gelato+-+variedad+terrosa+con+notas+de+bosque',
-            potencia: 'Premium',
-            rating: '4.9',
-            flavor:
-              'Perfil terroso con notas profundas de pino del Mediterráneo y cacao.',
-            effects:
-              'Efecto relajante y eufórico. Ideal para momentos de descanso y meditación.',
-            genetics: 'Híbrido dominante Indica (60% Indica / 40% Sativa)',
-            flowering: '8-9 semanas',
-          },
-          'OG KUSH': {
-            image:
-              'https://placehold.co/600x384/png?text=OG+Kush+-+cl%C3%A1sico+terroso+con+notas+c%C3%ADtricas',
-            potencia: 'Élite',
-            rating: '4.9',
-            flavor:
-              'Combinación clásica de limon y pino con efecto corporal potente.',
-            effects:
-              'Efecto potente y relajante. Perfecto para aliviar el estrés y la ansiedad.',
-            genetics: 'Híbrido dominante Indica (75% Indica / 25% Sativa)',
-            flowering: '8 semanas',
-          },
-          'BUBBA KUSH': {
-            image:
-              'https://placehold.co/600x384/png?text=Bubba+Kush+-+tierra+h%C3%Bameda+con+notas+de+caf%C3%A9',
-            potencia: 'Potente',
-            rating: '4.7',
-            flavor:
-              'Dominante notas de tierra húmeda con toque de café y cacao oscuro.',
-            effects:
-              'Efecto sedante y relajante muscular. Excelente para el descanso nocturno.',
-            genetics: 'Indica pura (90% Indica / 10% Sativa)',
-            flowering: '8-9 semanas',
-          },
-        };
-
-        function openModal(strain) {
-          selectedStrain.value = strain;
-          showModal.value = true;
-        }
-
-        function closeModal() {
-          showModal.value = false;
-          selectedStrain.value = null;
-        }
-
-        function verifyAge(isAdult) {
-          if (isAdult) {
-            ageVerified.value = true;
-          } else {
-            // Redirect to external site or show message
-            window.location.href = 'https://www.google.com';
-          }
-        }
-
-        return {
-          currentCatalog,
-          showModal,
-          selectedStrain,
-          strainDetails,
-          openModal,
-          closeModal,
-          mobileMenuOpen,
-          ageVerified,
-          verifyAge,
-        };
-      },
-    }).mount('#app');
-  </script>
-</body>
-</html>
