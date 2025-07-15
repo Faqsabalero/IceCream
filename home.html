@@ -257,61 +257,13 @@
     button:focus-visible {
       outline-offset: 2px;
     }
-    /* Age gate overlay */
-    #age-gate {
-      position: fixed;
-      inset: 0;
-      background: #0f172a;
-      z-index: 99999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem;
-    }
+    
   </style>
 </head>
 <body class="bg-[url('https://pipphorticulture.com/wp-content/uploads/elementor/thumbs/Pipp-Storage-70-small2-r12fe3zuka48szbft90wbnht33jeiwi18digf92mi8.jpg')] bg-cover bg-center bg-fixed bg-no-repeat bg-opacity-50 bg-blend-darken text-white font-montserrat selection:bg-accent selection:text-deepblue">
-  <div id="app" class="relative" :aria-hidden="!ageVerified">
-    <!-- Age Gate Overlay -->
-    <transition name="fade">
-      <div
-        v-if="!ageVerified"
-        id="age-gate"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="age-gate-title"
-        aria-describedby="age-gate-desc"
-        tabindex="0"
-      >
-        <div class="max-w-md bg-slate-900 rounded-3xl p-10 text-center shadow-neon-blue border border-accent/40">
-          <h2 id="age-gate-title" class="text-4xl font-oxanium font-extrabold mb-6 text-accent select-none">
-            Verificación de Edad
-          </h2>
-          <p id="age-gate-desc" class="text-lg text-slate-300 mb-8 select-none leading-relaxed">
-            Debe tener al menos 21 años para ingresar a este sitio web. Por favor, confirme su edad.
-          </p>
-          <div class="flex flex-col sm:flex-row justify-center gap-6">
-            <button
-              @click="verifyAge(true)"
-              class="bg-cyanglow hover:bg-accent text-deepblue font-extrabold px-8 py-4 rounded-3xl text-xl shadow-neon-blue transition transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyanglow focus:ring-opacity-60"
-              aria-label="Confirmo que tengo 21 años o más"
-            >
-              Soy mayor de 21
-            </button>
-            <button
-              @click="verifyAge(false)"
-              class="bg-red-600 hover:bg-red-700 text-white font-extrabold px-8 py-4 rounded-3xl text-xl shadow-neon-red transition transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-red-600 focus:ring-opacity-60"
-              aria-label="No tengo 21 años, salir del sitio"
-            >
-              No tengo 21 años
-            </button>
-          </div>
-        </div>
-      </div>
-    </transition>
-
+  <div id="app" class="relative">
     <!-- Main content -->
-    <div v-show="ageVerified" class="relative">
+    <div class="relative">
       <!-- Header hero -->
       <header class="hero-bg min-h-screen flex flex-col relative">
          <img
@@ -745,7 +697,6 @@
         const showModal = ref(false);
         const selectedStrain = ref(null);
         const mobileMenuOpen = ref(false);
-        const ageVerified = ref(false);
 
         const tropicalStrains = [
           {
@@ -971,13 +922,6 @@
           selectedStrain.value = null;
         }
 
-        function verifyAge(isAdult) {
-          ageVerified.value = isAdult;
-          if (!isAdult) {
-            window.location.href = 'https://www.google.com';
-          }
-        }
-
         return {
           currentCatalog,
           showModal,
@@ -986,9 +930,7 @@
           terrosoStrains,
           openModal,
           closeModal,
-          mobileMenuOpen,
-          ageVerified,
-          verifyAge
+          mobileMenuOpen
         };
       }
     }).mount('#app');
