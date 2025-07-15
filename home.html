@@ -257,13 +257,61 @@
     button:focus-visible {
       outline-offset: 2px;
     }
-    
+    /* Age gate overlay */
+    #age-gate {
+      position: fixed;
+      inset: 0;
+      background: #0f172a;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
   </style>
 </head>
 <body class="bg-[url('https://pipphorticulture.com/wp-content/uploads/elementor/thumbs/Pipp-Storage-70-small2-r12fe3zuka48szbft90wbnht33jeiwi18digf92mi8.jpg')] bg-cover bg-center bg-fixed bg-no-repeat bg-opacity-50 bg-blend-darken text-white font-montserrat selection:bg-accent selection:text-deepblue">
-  <div id="app" class="relative">
+  <div id="app" class="relative" :aria-hidden="!ageVerified">
+    <!-- Age Gate Overlay -->
+    <transition name="fade">
+      <div
+        v-if="!ageVerified"
+        id="age-gate"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="age-gate-title"
+        aria-describedby="age-gate-desc"
+        tabindex="0"
+      >
+        <div class="max-w-md bg-slate-900 rounded-3xl p-10 text-center shadow-neon-blue border border-accent/40">
+          <h2 id="age-gate-title" class="text-4xl font-oxanium font-extrabold mb-6 text-accent select-none">
+            Verificación de Edad
+          </h2>
+          <p id="age-gate-desc" class="text-lg text-slate-300 mb-8 select-none leading-relaxed">
+            Debe tener al menos 21 años para ingresar a este sitio web. Por favor, confirme su edad.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-6">
+            <button
+              @click="verifyAge(true)"
+              class="bg-cyanglow hover:bg-accent text-deepblue font-extrabold px-8 py-4 rounded-3xl text-xl shadow-neon-blue transition transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyanglow focus:ring-opacity-60"
+              aria-label="Confirmo que tengo 21 años o más"
+            >
+              Soy mayor de 21
+            </button>
+            <button
+              @click="verifyAge(false)"
+              class="bg-red-600 hover:bg-red-700 text-white font-extrabold px-8 py-4 rounded-3xl text-xl shadow-neon-red transition transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-red-600 focus:ring-opacity-60"
+              aria-label="No tengo 21 años, salir del sitio"
+            >
+              No tengo 21 años
+            </button>
+          </div>
+        </div>
+      </div>
+    </transition>
+
     <!-- Main content -->
-    <div class="relative">
+    <div v-show="ageVerified" class="relative">
       <!-- Header hero -->
       <header class="hero-bg min-h-screen flex flex-col relative">
          <img
@@ -593,7 +641,7 @@
                 </div>
                 <div class="p-8 space-y-6">
                   <div class="flex justify-between items-center text-lg font-semibold text-accent select-none">
-                    <span>{{ strain.rating }}</span>
+                    <span>{{ strain.potencia }}</span>
                     <div class="flex items-center" :aria-label="'Calificación ' + strain.rating + ' estrellas'">
                       <i class="fas fa-star mr-1" v-for="n in Math.floor(strain.rating)" :key="n"></i>
                       <i class="fas fa-star-half-alt" v-if="strain.rating % 1 >= 0.5"></i>
@@ -685,6 +733,109 @@
           </div>
         </div>
       </section>
+
+      <!-- Modal de Detalles de Variedad -->
+      <div v-if="showModal" class="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4" @click.self="closeModal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-slate-900/95 backdrop-blur-xl border border-accent/30 rounded-3xl shadow-2xl shadow-neon-blue">
+          <div class="p-8 md:p-12">
+            <!-- Header del modal -->
+            <div class="flex justify-between items-start mb-8">
+              <div>
+                <h2 id="modal-title" class="text-4xl md:text-5xl font-oxanium font-extrabold text-white mb-2">
+                  {{ getSelectedStrain().name }}
+                </h2>
+                <p class="text-xl text-accent font-semibold">
+                  {{ currentCatalog === 'tropical' ? 'Línea Mix Tropical' : 'Línea Terpeno Terroso' }}
+                </p>
+              </div>
+              <button 
+                @click="closeModal" 
+                class="text-white hover:text-accent transition-colors p-2 rounded-full hover:bg-accent/20 focus:outline-none focus:ring-2 focus:ring-accent"
+                aria-label="Cerrar modal"
+              >
+                <i class="fas fa-times text-2xl"></i>
+              </button>
+            </div>
+
+            <!-- Contenido principal -->
+            <div class="grid md:grid-cols-2 gap-8 mb-8">
+              <!-- Imagen -->
+              <div class="rounded-2xl overflow-hidden shadow-lg">
+                <img 
+                  :src="getSelectedStrain().image" 
+                  :alt="getSelectedStrain().name"
+                  class="w-full h-80 object-cover"
+                />
+              </div>
+
+              <!-- Información rápida -->
+              <div class="space-y-6">
+                <div class="bg-slate-800/50 rounded-2xl p-6">
+                  <h3 class="text-2xl font-oxanium font-bold text-accent mb-4">Características</h3>
+                  <div class="space-y-3">
+                    <div class="flex justify-between">
+                      <span class="text-slate-300">Potencia:</span>
+                      <span class="text-white font-semibold">{{ getSelectedStrain().potencia }}</span>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-slate-300">Calificación:</span>
+                      <div class="flex items-center">
+                        <div class="flex text-yellow-400">
+                          <i class="fas fa-star" v-for="n in Math.floor(getSelectedStrain().rating)" :key="n"></i>
+                          <i class="fas fa-star-half-alt" v-if="getSelectedStrain().rating % 1 >= 0.5"></i>
+                        </div>
+                        <span class="ml-2 text-white font-semibold">{{ getSelectedStrain().rating }}</span>
+                      </div>
+                    </div>
+                    <div class="flex justify-between">
+                      <span class="text-slate-300">Tipo:</span>
+                      <span class="text-white font-semibold">{{ currentCatalog === 'tropical' ? 'Sativa Dominante' : 'Índica Dominante' }}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="bg-slate-800/50 rounded-2xl p-6">
+                  <h3 class="text-xl font-oxanium font-bold text-accent mb-3">Perfil de Sabor</h3>
+                  <p class="text-slate-300 leading-relaxed">{{ getSelectedStrain().flavor }}</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Información detallada -->
+            <div class="grid md:grid-cols-2 gap-8">
+              <div class="bg-slate-800/50 rounded-2xl p-6">
+                <h3 class="text-xl font-oxanium font-bold text-accent mb-4">Efectos</h3>
+                <p class="text-slate-300 leading-relaxed">{{ getSelectedStrain().effects }}</p>
+              </div>
+
+              <div class="bg-slate-800/50 rounded-2xl p-6">
+                <h3 class="text-xl font-oxanium font-bold text-accent mb-4">Genética</h3>
+                <p class="text-slate-300 leading-relaxed">{{ getSelectedStrain().genetics }}</p>
+              </div>
+
+              <div class="bg-slate-800/50 rounded-2xl p-6">
+                <h3 class="text-xl font-oxanium font-bold text-accent mb-4">Floración</h3>
+                <p class="text-slate-300 leading-relaxed">{{ getSelectedStrain().flowering }}</p>
+              </div>
+
+              <div v-if="getSelectedStrain().yield" class="bg-slate-800/50 rounded-2xl p-6">
+                <h3 class="text-xl font-oxanium font-bold text-accent mb-4">Rendimiento</h3>
+                <p class="text-slate-300 leading-relaxed">{{ getSelectedStrain().yield }}</p>
+              </div>
+            </div>
+
+            <!-- Botón de cierre -->
+            <div class="mt-8 text-center">
+              <button 
+                @click="closeModal" 
+                class="bg-gradient-to-r from-cyanglow to-accent text-deepblue px-8 py-3 rounded-full font-extrabold text-lg shadow-neon-blue hover:brightness-110 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyanglow focus:ring-opacity-60"
+              >
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -697,8 +848,19 @@
         const showModal = ref(false);
         const selectedStrain = ref(null);
         const mobileMenuOpen = ref(false);
+        const ageVerified = ref(false);
 
         const tropicalStrains = [
+          {
+            name: 'MIMOSA',
+            image: 'https://www.barneysfarm.com/images/products/__mimosa-evo_circle_new_21_128414.webp',
+            potencia: '3 · CBD bajo',
+            rating: 4.2,
+            flavor: 'Cítricos brillantes y limón con matices de frutas tropicales y fondo terroso; una auténtica “bomba refrescante”.',
+            effects: 'Eufórica y energética a dosis moderadas; en cantidades altas ofrece una relajación corporal profunda que alivia estrés y ansiedad.',
+            genetics: 'Purple Punch × Clementine — híbrido dominante Sativa 70 % / Indica 30 %.',
+            flowering: '9-10 semanas en interior · cosecha exterior a mediados de octubre.'
+          },
           {
             name: 'GORILLA GLUE #4 (GG4)',
             image: 'https://www.bsfseeds.com.ar/wp-content/uploads//gorilla-glue4.jpg',
@@ -710,151 +872,6 @@
             flowering: '8-9 semanas en interior · cosecha exterior: principios/mitad de octubre.',
             yield: 'Hasta 600 g/m² indoor; 500-1 200 g/planta outdoor. Alta tolerancia a moho y hongos gracias a su estructura compacta y resina abundante.'
           },
-          {
-            name: 'BLUE SUNSET SHERBET',
-            image: 'https://www.barneysfarm.com/images/products/__blue-sunset-sherbert_circle_new_21_126486.webp',
-            potencia: '4 · CBD ≈ 0,5 %',
-            rating: 4.9,
-            flavor: 'Feno Apple Crisp: manzana verde, ralladura de limón y caramelo ligero. Feno Berry Gum: chicle dulce con arándanos y frutos rojos maduros. Terpenos dominantes: limoneno, humuleno, terpinoleno.',
-            effects: 'Euforia creativa de inicio rápido que evoluciona hacia una relajación corporal profunda; útil para mitigar estrés, ansiedad y fatiga sin perder claridad mental.'
-          },
-          {
-            name: 'TANGIE GHOST TRAIN HAZE (TGT)',
-            image: 'https://www.cannaconnection.com/12727-atmn_large_rectangle/tangie-ghost-train.jpg',
-            potencia: '5 · CBD < 1 %',
-            rating: 4.7,
-            flavor: 'Mandarina intensa con fondo “gas/diesel” y notas herbales; nuestro fenotipo resalta un matiz “mandarina-chinche apestosa” que perfuma todo el ambiente de principio a fin.',
-            effects: 'Golpe sativo explosivo: euforia cerebral, gran claridad y un marcado estímulo corporal que puede acelerar el pulso (“taquicárdico”). Ideal para sesiones creativas o momentos que requieran energía elevada; potencia elevada, no apta para principiantes.',
-            genetics: 'Tangie × Ghost Train Haze #1 · Sativa dominante ≈ 70 % Sativa / 30 % Índica',
-            flowering: 'Indoor: 9-10 semanas (≈ 63-70 días) · Outdoor: cosecha mediados-finales de octubre',
-            yield: 'Indoor: 500-600 g/m² · Outdoor: 700 g/planta +'
-          },
-          {
-            name: 'PURPLE TANGIE',
-            image: 'https://silverriverseeds.com/wp-content/uploads/2025/04/purple-traingie-2.jpg',
-            potencia: '2 · CBD ≈ 0,4 %',
-            rating: 4.6,
-            flavor: 'Pomelo intenso acompañado de un retrogusto “chinche /diesel” muy persistente. Notas secundarias de cáscara de quinoto y naranja caramelizada que perfuman todo el entorno.',
-            effects: 'Despegue sativo de euforia y claridad mental que impulsa la creatividad; prolongado “push” energético con alerta corporal. Puede incrementar la frecuencia cardíaca, por lo que se recomienda dosificación responsable.',
-            genetics: 'Ghost Train Tangie × Purple Punch — híbrido Índica 60 % / Sativa 40 %',
-            flowering: '≈ 63 días indoor · Cosecha outdoor: 2.ª semana de octubre',
-            yield: 'Indoor: ≈ 500 g/m² · Outdoor: 1,2 – 2 kg/planta (clima templado-seco)'
-          }
-        ];
-
-        const terrosoStrains = [
-          {
-            name: 'ZOMBIE KUSH',
-            image: 'https://saltonverde.com/wp-content/uploads/2022/02/zombie-bride-ripper-seeds-02.jpg',
-            potencia: '3 · CBD < 1 %',
-            rating: 4.0,
-            flavor: 'Baya dulce, pino y especias kush con fondo terroso; toques de frutos rojos y lavanda que dejan un aroma denso y persistente.',
-            effects: 'Sedación rápida tipo “couch-lock”, alivio muscular y aumento de apetito; ideal para combatir estrés, insomnio y dolor crónico.',
-            genetics: 'Sideral (Lavender Kush × Amnesia) × Bubba Kush — híbrido Índica 80 % / Sativa 20 %.',
-            flowering: 'Indoor: 55-60 días · Outdoor: cosecha principios-mediados de octubre.',
-            yield: 'Indoor: 400-500 g/m² · Outdoor: 500-700 g/planta; producción alta con cogollos densos y resinosos.'
-          },
-          {
-            name: 'PURE INFERNO',
-            image: 'https://www.apocalypseeds.com/wp-content/uploads/2023/07/DSC1645-Editar-scaled-600x400.jpg',
-            potencia: '4,9+ · CBD < 1 %',
-            rating: 4.9,
-            flavor: 'Fenotipo “Tang Lemonade”: explosión de jugo cítrico (limón–lima) que recuerda al sobre de refresco Tang, con fondo dulce y un leve toque terroso. Notas secundarias de galleta Oreo, cítricos y arándano heredadas del linaje.',
-            effects: 'Inicio eufórico y edificante que deriva en relajación corporal profunda; ideal para desconectar, aliviar estrés y disfrutar de un colocón duradero sin pesadez excesiva.',
-            genetics: 'Pure Michigan × Dante Inferno — predominancia Índica ~70 % / Sativa 30 %.',
-            flowering: 'Indoor: 8-9 semanas · Outdoor: cosecha principios/mediados de octubre.',
-            yield: 'Producción media-alta: ≈ 450-550 g/m² indoor · 600-800 g/planta outdoor; cogollos muy densos y cargados de tricomas, aptos para LST y scrog.'
-          },
-          {
-            name: 'MIMOSA',
-            image: 'https://www.barneysfarm.com/images/products/__mimosa-evo_circle_new_21_128414.webp',
-            potencia: '3 · CBD bajo',
-            rating: 4.2,
-            flavor: 'Cítricos brillantes y limón con matices de frutas tropicales y fondo terroso; una auténtica “bomba refrescante”.',
-            effects: 'Eufórica y energética a dosis moderadas; en cantidades altas ofrece una relajación corporal profunda que alivia estrés y ansiedad.',
-            genetics: 'Purple Punch × Clementine — híbrido dominante Sativa 70 % / Indica 30 %.',
-            flowering: '9-10 semanas en interior · cosecha exterior a mediados de octubre.'
-          }
-        ];
-=======
-        const tropicalStrains = [
-          {
-            name: 'GORILLA GLUE #4 (GG4)',
-            image: 'https://www.bsfseeds.com.ar/wp-content/uploads//gorilla-glue4.jpg',
-            potencia: '2 · CBD < 1 %',
-            rating: 4.2,
-            flavor: 'Gas/diesel muy marcado sobre base terrosa y notas de pino y chocolate; aroma denso y persistente.',
-            effects: 'Euforia cerebral inmediata que deriva en relajación corporal profunda (“couch-lock”); ideal para mitigar estrés, ansiedad y dolor crónico.',
-            genetics: 'Chem’s Sister × Sour Dubb × Chocolate Diesel — híbrido dominante Índica 63 % / Sativa 37 %.',
-            flowering: '8-9 semanas en interior · cosecha exterior: principios/mitad de octubre.',
-            yield: 'Hasta 600 g/m² indoor; 500-1 200 g/planta outdoor. Alta tolerancia a moho y hongos gracias a su estructura compacta y resina abundante.'
-          },
-          {
-            name: 'BLUE SUNSET SHERBET',
-            image: 'https://www.barneysfarm.com/images/products/__blue-sunset-sherbert_circle_new_21_126486.webp',
-            potencia: '4 · CBD ≈ 0,5 %',
-            rating: 4.9,
-            flavor: 'Feno Apple Crisp: manzana verde, ralladura de limón y caramelo ligero. Feno Berry Gum: chicle dulce con arándanos y frutos rojos maduros. Terpenos dominantes: limoneno, humuleno, terpinoleno.',
-            effects: 'Euforia creativa de inicio rápido que evoluciona hacia una relajación corporal profunda; útil para mitigar estrés, ansiedad y fatiga sin perder claridad mental.'
-          },
-          {
-            name: 'TANGIE GHOST TRAIN HAZE (TGT)',
-            image: 'https://www.cannaconnection.com/12727-atmn_large_rectangle/tangie-ghost-train.jpg',
-            potencia: '5 · CBD < 1 %',
-            rating: 4.7,
-            flavor: 'Mandarina intensa con fondo “gas/diesel” y notas herbales; nuestro fenotipo resalta un matiz “mandarina-chinche apestosa” que perfuma todo el ambiente de principio a fin.',
-            effects: 'Golpe sativo explosivo: euforia cerebral, gran claridad y un marcado estímulo corporal que puede acelerar el pulso (“taquicárdico”). Ideal para sesiones creativas o momentos que requieran energía elevada; potencia elevada, no apta para principiantes.',
-            genetics: 'Tangie × Ghost Train Haze #1 · Sativa dominante ≈ 70 % Sativa / 30 % Índica',
-            flowering: 'Indoor: 9-10 semanas (≈ 63-70 días) · Outdoor: cosecha mediados-finales de octubre',
-            yield: 'Indoor: 500-600 g/m² · Outdoor: 700 g/planta +'
-          },
-          {
-            name: 'PURPLE TANGIE',
-            image: 'https://silverriverseeds.com/wp-content/uploads/2025/04/purple-traingie-2.jpg',
-            potencia: '2 · CBD ≈ 0,4 %',
-            rating: 4.6,
-            flavor: 'Pomelo intenso acompañado de un retrogusto “chinche /diesel” muy persistente. Notas secundarias de cáscara de quinoto y naranja caramelizada que perfuman todo el entorno.',
-            effects: 'Despegue sativo de euforia y claridad mental que impulsa la creatividad; prolongado “push” energético con alerta corporal. Puede incrementar la frecuencia cardíaca, por lo que se recomienda dosificación responsable.',
-            genetics: 'Ghost Train Tangie × Purple Punch — híbrido Índica 60 % / Sativa 40 %',
-            flowering: '≈ 63 días indoor · Cosecha outdoor: 2.ª semana de octubre',
-            yield: 'Indoor: ≈ 500 g/m² · Outdoor: 1,2 – 2 kg/planta (clima templado-seco)'
-          }
-        ];
-
-        const terrosoStrains = [
-          {
-            name: 'ZOMBIE KUSH',
-            image: 'https://saltonverde.com/wp-content/uploads/2022/02/zombie-bride-ripper-seeds-02.jpg',
-            potencia: '3 · CBD < 1 %',
-            rating: 4.0,
-            flavor: 'Baya dulce, pino y especias kush con fondo terroso; toques de frutos rojos y lavanda que dejan un aroma denso y persistente.',
-            effects: 'Sedación rápida tipo “couch-lock”, alivio muscular y aumento de apetito; ideal para combatir estrés, insomnio y dolor crónico.',
-            genetics: 'Sideral (Lavender Kush × Amnesia) × Bubba Kush — híbrido Índica 80 % / Sativa 20 %.',
-            flowering: 'Indoor: 55-60 días · Outdoor: cosecha principios-mediados de octubre.',
-            yield: 'Indoor: 400-500 g/m² · Outdoor: 500-700 g/planta; producción alta con cogollos densos y resinosos.'
-          },
-          {
-            name: 'PURE INFERNO',
-            image: 'https://www.apocalypseeds.com/wp-content/uploads/2023/07/DSC1645-Editar-scaled-600x400.jpg',
-            potencia: '4,9+ · CBD < 1 %',
-            rating: 4.9,
-            flavor: 'Fenotipo “Tang Lemonade”: explosión de jugo cítrico (limón–lima) que recuerda al sobre de refresco Tang, con fondo dulce y un leve toque terroso. Notas secundarias de galleta Oreo, cítricos y arándano heredadas del linaje.',
-            effects: 'Inicio eufórico y edificante que deriva en relajación corporal profunda; ideal para desconectar, aliviar estrés y disfrutar de un colocón duradero sin pesadez excesiva.',
-            genetics: 'Pure Michigan × Dante Inferno — predominancia Índica ~70 % / Sativa 30 %.',
-            flowering: 'Indoor: 8-9 semanas · Outdoor: cosecha principios/mediados de octubre.',
-            yield: 'Producción media-alta: ≈ 450-550 g/m² indoor · 600-800 g/planta outdoor; cogollos muy densos y cargados de tricomas, aptos para LST y scrog.'
-          },
-          {
-            name: 'MIMOSA',
-            image: 'https://www.barneysfarm.com/images/products/__mimosa-evo_circle_new_21_128414.webp',
-            potencia: '3 · CBD bajo',
-            rating: 4.2,
-            flavor: 'Cítricos brillantes y limón con matices de frutas tropicales y fondo terroso; una auténtica “bomba refrescante”.',
-            effects: 'Eufórica y energética a dosis moderadas; en cantidades altas ofrece una relajación corporal profunda que alivia estrés y ansiedad.',
-            genetics: 'Purple Punch × Clementine — híbrido dominante Sativa 70 % / Indica 30 %.',
-            flowering: '9-10 semanas en interior · cosecha exterior a mediados de octubre.'
-          }
-        ];
           {
             name: 'BLUE SUNSET SHERBET',
             image: 'https://www.barneysfarm.com/images/products/__blue-sunset-sherbert_circle_new_21_126486.webp',
@@ -922,6 +939,20 @@
           selectedStrain.value = null;
         }
 
+        function getSelectedStrain() {
+          if (!selectedStrain.value) return {};
+          
+          const allStrains = [...tropicalStrains, ...terrosoStrains];
+          return allStrains.find(strain => strain.name === selectedStrain.value) || {};
+        }
+
+        function verifyAge(isAdult) {
+          ageVerified.value = isAdult;
+          if (!isAdult) {
+            window.location.href = 'https://www.google.com';
+          }
+        }
+
         return {
           currentCatalog,
           showModal,
@@ -930,7 +961,9 @@
           terrosoStrains,
           openModal,
           closeModal,
-          mobileMenuOpen
+          mobileMenuOpen,
+          ageVerified,
+          verifyAge
         };
       }
     }).mount('#app');
