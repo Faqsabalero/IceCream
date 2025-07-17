@@ -996,6 +996,46 @@
                   </button>
                 </div>
               </div>
+
+              <div
+                class="relative catalog-item glass-effect rounded-3xl overflow-hidden border border-accent/30 hover:border-accent/60 focus-within:ring-4 focus-within:ring-accent focus-within:ring-opacity-60 shadow-neon-blue"
+                tabindex="0"
+                aria-label="Variedad Blue Sunset Sherbet"
+              >
+                <div class="relative h-72 rounded-3xl overflow-hidden shadow-lg">
+                  <img
+                    src="https://www.barneysfarm.com/images/products/__blue-sunset-sherbert_circle_new_21_126486.webp"
+                    alt="Blue Sunset Sherbet - variedad tropical con perfiles de manzana verde y frutos rojos"
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div
+                    class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent py-5 px-8 rounded-b-3xl"
+                  >
+                    <div class="text-2xl font-extrabold text-white drop-shadow-neon-blue select-none">BLUE SUNSET SHERBET</div>
+                  </div>
+                </div>
+                <div class="p-8 space-y-6">
+                  <div class="flex justify-between items-center text-lg font-semibold text-accent select-none">
+                    <span>Élite</span>
+                    <div class="flex items-center" aria-label="Calificación 4.9 estrellas">
+                      <i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star"></i>
+                      <span class="ml-2 text-white font-bold">4.9</span>
+                    </div>
+                  </div>
+                  <p class="text-slate-300 text-base leading-relaxed select-none">
+                    Perfil tropical complejo con manzana verde, frutos rojos y caramelo. Efecto euforizante.
+                  </p>
+                  <button
+                    @click.prevent="openModal('BLUE SUNSET SHERBET')"
+                    class="w-full bg-gradient-to-r from-cyanglow to-accent text-deepblue px-6 py-3 rounded-3xl font-extrabold text-lg shadow-neon-blue hover:brightness-110 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyanglow focus:ring-opacity-60"
+                    aria-label="Ver detalles de Blue Sunset Sherbet"
+                  >
+                    Ver detalles
+                  </button>
+                </div>
+              </div>
             </div>
 
             <div
@@ -1468,6 +1508,18 @@
             effects:
               'Efecto sedante y relajante muscular. Excelente para el descanso nocturno.',
             genetics: 'Indica pura (90% Indica / 10% Sativa)',
+            flowering: '8-9 semanas',
+          },
+          'BLUE SUNSET SHERBET': {
+            image:
+              'https://www.barneysfarm.com/images/products/__blue-sunset-sherbert_circle_new_21_126486.webp',
+            potencia: 'Élite',
+            rating: '4.9',
+            flavor:
+              'Feno Apple Crisp: manzana verde, ralladura de limón y caramelo ligero. Feno Berry Gum: chicle dulce con arándanos y frutos rojos maduros. Terpenos dominantes: limoneno, humuleno, terpinoleno.',
+            effects:
+              'Euforia creativa de inicio rápido que evoluciona hacia una relajación corporal profunda; útil para mitigar estrés, ansiedad y fatiga sin perder claridad mental.',
+            genetics: 'Barney\'s Farm · Ice Cream Genetics — selección interna de 2 fenotipos',
             flowering: '8-9 semanas',
           },
         };
