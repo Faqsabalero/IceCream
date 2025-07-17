@@ -1076,6 +1076,46 @@
                   </button>
                 </div>
               </div>
+
+              <div
+                class="relative catalog-item glass-effect rounded-3xl overflow-hidden border border-accent/30 hover:border-accent/60 focus-within:ring-4 focus-within:ring-accent focus-within:ring-opacity-60 shadow-neon-blue"
+                tabindex="0"
+                aria-label="Variedad Purple Tangie"
+              >
+                <div class="relative h-72 rounded-3xl overflow-hidden shadow-lg">
+                  <img
+                    src="https://silverriverseeds.com/wp-content/uploads/2025/04/purple-traingie-2.jpg"
+                    alt="Purple Tangie - variedad con pomelo intenso y notas diesel"
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div
+                    class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent py-5 px-8 rounded-b-3xl"
+                  >
+                    <div class="text-2xl font-extrabold text-white drop-shadow-neon-blue select-none">PURPLE TANGIE</div>
+                  </div>
+                </div>
+                <div class="p-8 space-y-6">
+                  <div class="flex justify-between items-center text-lg font-semibold text-accent select-none">
+                    <span>Premium</span>
+                    <div class="flex items-center" aria-label="Calificación 4.6 estrellas">
+                      <i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star-half-alt"></i>
+                      <span class="ml-2 text-white font-bold">4.6</span>
+                    </div>
+                  </div>
+                  <p class="text-slate-300 text-base leading-relaxed select-none">
+                    Pomelo intenso con retrogusto diesel persistente y notas cítricas.
+                  </p>
+                  <button
+                    @click.prevent="openModal('PURPLE TANGIE')"
+                    class="w-full bg-gradient-to-r from-cyanglow to-accent text-deepblue px-6 py-3 rounded-3xl font-extrabold text-lg shadow-neon-blue hover:brightness-110 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyanglow focus:ring-opacity-60"
+                    aria-label="Ver detalles de Purple Tangie"
+                  >
+                    Ver detalles
+                  </button>
+                </div>
+              </div>
             </div>
 
             <div
@@ -1573,6 +1613,19 @@
               'Golpe sativo explosivo: euforia cerebral, gran claridad y un marcado estímulo corporal que puede acelerar el pulso ("taquicárdico"). Ideal para sesiones creativas o momentos que requieran energía elevada; potencia elevada, no apta para principiantes.',
             genetics: 'Tangie × Ghost Train Haze #1 · Sativa dominante ≈ 70 % Sativa / 30 % Índica',
             flowering: 'Indoor: 9-10 semanas (≈ 63-70 días) · Outdoor: cosecha mediados-finales de octubre',
+          },
+          'PURPLE TANGIE': {
+            image:
+              'https://silverriverseeds.com/wp-content/uploads/2025/04/purple-traingie-2.jpg',
+            potencia: '2 · CBD ≈ 0,4 %',
+            rating: '4.6',
+            flavor:
+              'Pomelo intenso acompañado de un retrogusto "chinche /diesel" muy persistente. Notas secundarias de cáscara de quinoto y naranja caramelizada que perfuman todo el entorno.',
+            effects:
+              'Despegue sativo de euforia y claridad mental que impulsa la creatividad; prolongado "push" energético con alerta corporal. Puede incrementar la frecuencia cardíaca, por lo que se recomienda dosificación responsable.',
+            genetics: 'Ghost Train Tangie × Purple Punch — híbrido Índica 60 % / Sativa 40 %',
+            flowering: '≈ 63 días indoor · Cosecha outdoor: 2.ª semana de octubre',
+            yield: 'Indoor: ≈ 500 g/m² · Outdoor: 1,2 – 2 kg/planta (clima templado-seco)',
           },
         };
 
