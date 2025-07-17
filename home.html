@@ -1036,6 +1036,46 @@
                   </button>
                 </div>
               </div>
+
+              <div
+                class="relative catalog-item glass-effect rounded-3xl overflow-hidden border border-accent/30 hover:border-accent/60 focus-within:ring-4 focus-within:ring-accent focus-within:ring-opacity-60 shadow-neon-blue"
+                tabindex="0"
+                aria-label="Variedad Tangie Ghost Train Haze"
+              >
+                <div class="relative h-72 rounded-3xl overflow-hidden shadow-lg">
+                  <img
+                    src="https://www.cannaconnection.com/12727-atmn_large_rectangle/tangie-ghost-train.jpg"
+                    alt="Tangie Ghost Train Haze - variedad con mandarina intensa y notas diesel"
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div
+                    class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent py-5 px-8 rounded-b-3xl"
+                  >
+                    <div class="text-2xl font-extrabold text-white drop-shadow-neon-blue select-none">TANGIE GHOST TRAIN HAZE</div>
+                  </div>
+                </div>
+                <div class="p-8 space-y-6">
+                  <div class="flex justify-between items-center text-lg font-semibold text-accent select-none">
+                    <span>Fenotipo Special</span>
+                    <div class="flex items-center" aria-label="Calificación 4.7 estrellas">
+                      <i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star-half-alt"></i>
+                      <span class="ml-2 text-white font-bold">4.7</span>
+                    </div>
+                  </div>
+                  <p class="text-slate-300 text-base leading-relaxed select-none">
+                    Mandarina intensa con fondo diesel y notas herbales. Efecto sativo explosivo.
+                  </p>
+                  <button
+                    @click.prevent="openModal('TANGIE GHOST TRAIN HAZE')"
+                    class="w-full bg-gradient-to-r from-cyanglow to-accent text-deepblue px-6 py-3 rounded-3xl font-extrabold text-lg shadow-neon-blue hover:brightness-110 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyanglow focus:ring-opacity-60"
+                    aria-label="Ver detalles de Tangie Ghost Train Haze"
+                  >
+                    Ver detalles
+                  </button>
+                </div>
+              </div>
             </div>
 
             <div
@@ -1521,6 +1561,18 @@
               'Euforia creativa de inicio rápido que evoluciona hacia una relajación corporal profunda; útil para mitigar estrés, ansiedad y fatiga sin perder claridad mental.',
             genetics: 'Barney\'s Farm · Ice Cream Genetics — selección interna de 2 fenotipos',
             flowering: '8-9 semanas',
+          },
+          'TANGIE GHOST TRAIN HAZE': {
+            image:
+              'https://www.cannaconnection.com/12727-atmn_large_rectangle/tangie-ghost-train.jpg',
+            potencia: '5',
+            rating: '4.7',
+            flavor:
+              'Mandarina intensa con fondo "gas/diesel" y notas herbales; nuestro fenotipo resalta un matiz "mandarina-chinche apestosa" que perfuma todo el ambiente de principio a fin.',
+            effects:
+              'Golpe sativo explosivo: euforia cerebral, gran claridad y un marcado estímulo corporal que puede acelerar el pulso ("taquicárdico"). Ideal para sesiones creativas o momentos que requieran energía elevada; potencia elevada, no apta para principiantes.',
+            genetics: 'Tangie × Ghost Train Haze #1 · Sativa dominante ≈ 70 % Sativa / 30 % Índica',
+            flowering: 'Indoor: 9-10 semanas (≈ 63-70 días) · Outdoor: cosecha mediados-finales de octubre',
           },
         };
 
