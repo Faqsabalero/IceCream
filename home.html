@@ -1285,6 +1285,46 @@
                   </button>
                 </div>
               </div>
+
+              <div
+                class="relative catalog-item glass-effect rounded-3xl overflow-hidden border border-green-400/30 hover:border-green-400/60 focus-within:ring-4 focus-within:ring-green-400 focus-within:ring-opacity-60 shadow-neon-green"
+                tabindex="0"
+                aria-label="Variedad Pure Inferno"
+              >
+                <div class="relative h-72 rounded-3xl overflow-hidden shadow-lg">
+                  <img
+                    src="https://www.apocalypseeds.com/wp-content/uploads/2023/07/DSC1645-Editar-scaled-600x400.jpg"
+                    alt="Pure Inferno - variedad con explosión de jugo cítrico y fondo dulce terroso"
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div
+                    class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent py-5 px-8 rounded-b-3xl"
+                  >
+                    <div class="text-2xl font-extrabold text-white drop-shadow-neon-green select-none">PURE INFERNO</div>
+                  </div>
+                </div>
+                <div class="p-8 space-y-6">
+                  <div class="flex justify-between items-center text-lg font-semibold text-green-400 select-none">
+                    <span>Élite</span>
+                    <div class="flex items-center" aria-label="Calificación 4.9 estrellas">
+                      <i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star"></i>
+                      <span class="ml-2 text-white font-bold">4.9</span>
+                    </div>
+                  </div>
+                  <p class="text-slate-300 text-base leading-relaxed select-none">
+                    Fenotipo "Tang Lemonade": explosión de jugo cítrico con fondo dulce y leve toque terroso.
+                  </p>
+                  <button
+                    @click.prevent="openModal('PURE INFERNO')"
+                    class="w-full bg-gradient-to-r from-greenglows to-green-400 text-deepblue px-6 py-3 rounded-3xl font-extrabold text-lg shadow-neon-green hover:brightness-110 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-greenglows focus:ring-opacity-60"
+                    aria-label="Ver detalles de Pure Inferno"
+                  >
+                    Ver detalles
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1600,6 +1640,19 @@
             genetics: 'Chem\'s Sister × Sour Dubb × Chocolate Diesel — híbrido dominante Índica 63 % / Sativa 37 %',
             flowering: '8-9 semanas en interior · cosecha exterior: principios/mitad de octubre',
             yield: 'Hasta 600 g/m² indoor; 500-1 200 g/planta outdoor. Alta tolerancia a moho y hongos gracias a su estructura compacta y resina abundante — perfecta para cultivos intensivos en racks Grow Grid.',
+          },
+          'PURE INFERNO': {
+            image:
+              'https://www.apocalypseeds.com/wp-content/uploads/2023/07/DSC1645-Editar-scaled-600x400.jpg',
+            potencia: '4,9+ · CBD < 1 %',
+            rating: '4.9',
+            flavor:
+              'Fenotipo "Tang Lemonade": explosión de jugo cítrico (limón–lima) que recuerda al sobre de refresco Tang, con fondo dulce y un leve toque terroso. Notas secundarias de galleta Oreo, cítricos y arándano heredadas del linaje.',
+            effects:
+              'Inicio eufórico y edificante que deriva en relajación corporal profunda; ideal para desconectar, aliviar estrés y disfrutar de un colocón duradero sin pesadez excesiva.',
+            genetics: 'Pure Michigan × Dante Inferno — predominancia Índica ~70 % / Sativa 30 %',
+            flowering: 'Indoor: 8-9 semanas · Outdoor: cosecha principios/mediados de octubre',
+            yield: 'Producción media-alta: ≈ 450-550 g/m² indoor · 600-800 g/planta outdoor; cogollos muy densos y cargados de tricomas, aptos para LST y scrog.',
           },
           'OG KUSH': {
             image:
