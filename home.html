@@ -1124,6 +1124,46 @@
               <div
                 class="relative catalog-item glass-effect rounded-3xl overflow-hidden border border-accent/30 hover:border-accent/60 focus-within:ring-4 focus-within:ring-accent focus-within:ring-opacity-60 shadow-neon-blue"
                 tabindex="0"
+                aria-label="Variedad CELOSA"
+              >
+                <div class="relative h-72 rounded-3xl overflow-hidden shadow-lg">
+                  <img
+                    src="https://juanijuana.com.ar/wp-content/uploads/2023/01/1080-Celosa-0.jpg"
+                    alt="CELOSA - variedad con crema dulce de frutos del bosque y notas de anís"
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div
+                    class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent py-5 px-8 rounded-b-3xl"
+                  >
+                    <div class="text-2xl font-extrabold text-white drop-shadow-neon-blue select-none">CELOSA</div>
+                  </div>
+                </div>
+                <div class="p-8 space-y-6">
+                  <div class="flex justify-between items-center text-lg font-semibold text-accent select-none">
+                    <span>Shuga Seeds</span>
+                    <div class="flex items-center" aria-label="Calificación 4.7+ estrellas">
+                      <i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star-half-alt"></i>
+                      <span class="ml-2 text-white font-bold">4.7+</span>
+                    </div>
+                  </div>
+                  <p class="text-slate-300 text-base leading-relaxed select-none">
+                    Postre Gelato 41: crema dulce de frutos del bosque (berry) con notas de anís y caramelo; aroma goloso que permanece largo rato en el ambiente.
+                  </p>
+                  <button
+                    @click.prevent="openModal('CELOSA')"
+                    class="w-full bg-gradient-to-r from-cyanglow to-accent text-deepblue px-6 py-3 rounded-3xl font-extrabold text-lg shadow-neon-blue hover:brightness-110 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyanglow focus:ring-opacity-60"
+                    aria-label="Ver detalles de CELOSA"
+                  >
+                    Ver detalles
+                  </button>
+                </div>
+              </div>
+
+              <div
+                class="relative catalog-item glass-effect rounded-3xl overflow-hidden border border-accent/30 hover:border-accent/60 focus-within:ring-4 focus-within:ring-accent focus-within:ring-opacity-60 shadow-neon-blue"
+                tabindex="0"
                 aria-label="Variedad Buttermint"
               >
                 <div class="relative h-72 rounded-3xl overflow-hidden shadow-lg">
@@ -1866,6 +1906,19 @@
             genetics: 'Wedding Crasher × (Unknown) — híbrido Sativa 60 % / Índica 40 %',
             flowering: 'Indoor: 55-65 días · Outdoor: cosecha principios-mediados de octubre',
             yield: 'Alto (heavy): cogollos densos y resinosos, aptos para extracción',
+          },
+          'CELOSA': {
+            image:
+              'https://juanijuana.com.ar/wp-content/uploads/2023/01/1080-Celosa-0.jpg',
+            potencia: '4 · CBD bajo',
+            rating: '4.7+',
+            flavor:
+              'Postre Gelato 41: crema dulce de frutos del bosque (berry) con notas de anís y caramelo; aroma goloso que permanece largo rato en el ambiente.',
+            effects:
+              'Euforia inmediata, elevación del ánimo y alivio del estrés; equilibrio índica/sativa que permite funcionalidad diurna sin sedación pesada.',
+            genetics: 'Gelato 41 × Sunset Sherbert BX1 — Índica 60 % / Sativa 40 %',
+            flowering: 'Indoor: 60-70 días · Outdoor: cosecha inicios-mediados de octubre',
+            yield: 'Alto; forma cogollos densos y muy resinosos',
           },
         };
 
