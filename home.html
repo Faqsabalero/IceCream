@@ -1325,6 +1325,46 @@
                   </button>
                 </div>
               </div>
+
+              <div
+                class="relative catalog-item glass-effect rounded-3xl overflow-hidden border border-green-400/30 hover:border-green-400/60 focus-within:ring-4 focus-within:ring-green-400 focus-within:ring-opacity-60 shadow-neon-green"
+                tabindex="0"
+                aria-label="Variedad Buttermint"
+              >
+                <div class="relative h-72 rounded-3xl overflow-hidden shadow-lg">
+                  <img
+                    src="https://cdn.seedfinder.eu/pics/01seeds/NBG_Seed_Co/NBG_Seed_Co_-_Buttermintz.jpg"
+                    alt="Buttermint - variedad con pulpa de sandía madura y matices de caramelo cremoso"
+                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <div
+                    class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent py-5 px-8 rounded-b-3xl"
+                  >
+                    <div class="text-2xl font-extrabold text-white drop-shadow-neon-green select-none">BUTTERMINT</div>
+                  </div>
+                </div>
+                <div class="p-8 space-y-6">
+                  <div class="flex justify-between items-center text-lg font-semibold text-green-400 select-none">
+                    <span>Calidad</span>
+                    <div class="flex items-center" aria-label="Calificación 3.5 estrellas">
+                      <i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star-half-alt mr-1"></i><i class="far fa-star"></i>
+                      <span class="ml-2 text-white font-bold">3.5</span>
+                    </div>
+                  </div>
+                  <p class="text-slate-300 text-base leading-relaxed select-none">
+                    Fenotipo "Watermelon": pulpa de sandía madura con matices de caramelo cremoso y sutil fondo herbáceo.
+                  </p>
+                  <button
+                    @click.prevent="openModal('BUTTERMINT')"
+                    class="w-full bg-gradient-to-r from-greenglows to-green-400 text-deepblue px-6 py-3 rounded-3xl font-extrabold text-lg shadow-neon-green hover:brightness-110 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-greenglows focus:ring-opacity-60"
+                    aria-label="Ver detalles de Buttermint"
+                  >
+                    Ver detalles
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -1653,6 +1693,19 @@
             genetics: 'Pure Michigan × Dante Inferno — predominancia Índica ~70 % / Sativa 30 %',
             flowering: 'Indoor: 8-9 semanas · Outdoor: cosecha principios/mediados de octubre',
             yield: 'Producción media-alta: ≈ 450-550 g/m² indoor · 600-800 g/planta outdoor; cogollos muy densos y cargados de tricomas, aptos para LST y scrog.',
+          },
+          'BUTTERMINT': {
+            image:
+              'https://cdn.seedfinder.eu/pics/01seeds/NBG_Seed_Co/NBG_Seed_Co_-_Buttermintz.jpg',
+            potencia: '2 · CBD < 1 %',
+            rating: '3.5',
+            flavor:
+              'Fenotipo "Watermelon": pulpa de sandía madura con matices de caramelo cremoso y un sutil fondo herbáceo. El aroma es dulce y afrutado, persistente desde el primer tiro hasta el poscombustión.',
+            effects:
+              'Ondas iniciales de euforia ligera seguidas de una relajación corporal agradable; ideal para descomprimir al final del día sin perder claridad mental. Usuarios reportan alivio de estrés y tensión muscular.',
+            genetics: 'Pink 2.0 × Kush Mints — híbrido índica dominante',
+            flowering: '50-52 días en interior · cosecha exterior: principios de octubre',
+            yield: 'Producción alta; cogollos densos con retorno a rosin del 5,3-5,6 %.',
           },
           'OG KUSH': {
             image:
