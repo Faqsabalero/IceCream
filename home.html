@@ -877,85 +877,9 @@
               v-show="currentCatalog === 'tropical'"
               class="grid md:grid-cols-2 lg:grid-cols-3 gap-12 transition-all duration-300"
             >
-              <div
-                class="relative catalog-item glass-effect rounded-3xl overflow-hidden border border-accent/30 hover:border-accent/60 focus-within:ring-4 focus-within:ring-accent focus-within:ring-opacity-60 shadow-neon-blue"
-                tabindex="0"
-                aria-label="Variedad Super Lemon"
-              >
-                <div class="relative h-72 rounded-3xl overflow-hidden shadow-lg">
-                  <img
-                    src="https://placehold.co/600x384/png?text=Super+Lemon+-+variedad+c%C3%ADtrica+intensa"
-                    alt="Super Lemon - variedad cítrica intensa con limones y hojas verdes"
-                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div
-                    class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent py-5 px-8 rounded-b-3xl"
-                  >
-                    <div class="text-2xl font-extrabold text-white drop-shadow-neon-blue select-none">SUPER LEMON</div>
-                  </div>
-                </div>
-                <div class="p-8 space-y-6">
-                  <div class="flex justify-between items-center text-lg font-semibold text-accent select-none">
-                    <span>Premium</span>
-                    <div class="flex items-center" aria-label="Calificación 4.8 estrellas">
-                      <i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star"></i>
-                      <span class="ml-2 text-white font-bold">4.8</span>
-                    </div>
-                  </div>
-                  <p class="text-slate-300 text-base leading-relaxed select-none">
-                    Dominante limón con notas de mango tropical. Efecto energizante y creativo.
-                  </p>
-                  <button
-                    @click.prevent="openModal('SUPER LEMON')"
-                    class="w-full bg-gradient-to-r from-cyanglow to-accent text-deepblue px-6 py-3 rounded-3xl font-extrabold text-lg shadow-neon-blue hover:brightness-110 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyanglow focus:ring-opacity-60"
-                    aria-label="Ver detalles de Super Lemon"
-                  >
-                    Ver detalles
-                  </button>
-                </div>
-              </div>
+             
 
-              <div
-                class="relative catalog-item glass-effect rounded-3xl overflow-hidden border border-accent/30 hover:border-accent/60 focus-within:ring-4 focus-within:ring-accent focus-within:ring-opacity-60 shadow-neon-blue"
-                tabindex="0"
-                aria-label="Variedad Tangie"
-              >
-                <div class="relative h-72 rounded-3xl overflow-hidden shadow-lg">
-                  <img
-                    src="https://placehold.co/600x384/png?text=Tangie+-+sabor+a+mandarina+reci%C3%A9n+pelada"
-                    alt="Tangie - sabor a mandarina recién pelada con frutas y hojas"
-                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div
-                    class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent py-5 px-8 rounded-b-3xl"
-                  >
-                    <div class="text-2xl font-extrabold text-white drop-shadow-neon-blue select-none">TANGIE</div>
-                  </div>
-                </div>
-                <div class="p-8 space-y-6">
-                  <div class="flex justify-between items-center text-lg font-semibold text-accent select-none">
-                    <span>Potente</span>
-                    <div class="flex items-center" aria-label="Calificación 4.7 estrellas">
-                      <i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star-half-alt"></i>
-                      <span class="ml-2 text-white font-bold">4.7</span>
-                    </div>
-                  </div>
-                  <p class="text-slate-300 text-base leading-relaxed select-none">
-                    Intenso sabor a mandarina tropical con efectos euforizantes y estimulantes.
-                  </p>
-                  <button
-                    @click.prevent="openModal('TANGIE')"
-                    class="w-full bg-gradient-to-r from-cyanglow to-accent text-deepblue px-6 py-3 rounded-3xl font-extrabold text-lg shadow-neon-blue hover:brightness-110 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-cyanglow focus:ring-opacity-60"
-                    aria-label="Ver detalles de Tangie"
-                  >
-                    Ver detalles
-                  </button>
-                </div>
-              </div>
+     
 
               <div
                 class="relative catalog-item glass-effect rounded-3xl overflow-hidden border border-accent/30 hover:border-accent/60 focus-within:ring-4 focus-within:ring-accent focus-within:ring-opacity-60 shadow-neon-blue"
@@ -1162,45 +1086,7 @@
                 </div>
               </div>
 
-              <div
-                class="relative catalog-item glass-effect rounded-3xl overflow-hidden border border-green-400/30 hover:border-green-400/60 focus-within:ring-4 focus-within:ring-green-400 focus-within:ring-opacity-60 shadow-neon-green"
-                tabindex="0"
-                aria-label="Variedad Zombie Kush"
-              >
-                <div class="relative h-72 rounded-3xl overflow-hidden shadow-lg">
-                  <img
-                    src="https://saltonverde.com/wp-content/uploads/2022/02/zombie-bride-ripper-seeds-02.jpg"
-                    alt="Zombie Kush - variedad con baya dulce, pino y especias kush"
-                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  <div
-                    class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/80 to-transparent py-5 px-8 rounded-b-3xl"
-                  >
-                    <div class="text-2xl font-extrabold text-white drop-shadow-neon-green select-none">ZOMBIE KUSH</div>
-                  </div>
-                </div>
-                <div class="p-8 space-y-6">
-                  <div class="flex justify-between items-center text-lg font-semibold text-green-400 select-none">
-                    <span>Potente</span>
-                    <div class="flex items-center" aria-label="Calificación 4 estrellas">
-                      <i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star mr-1"></i><i class="fas fa-star"></i>
-                      <span class="ml-2 text-white font-bold">4</span>
-                    </div>
-                  </div>
-                  <p class="text-slate-300 text-base leading-relaxed select-none">
-                    Baya dulce, pino y especias kush con fondo terroso; toques de frutos rojos y lavanda que dejan un aroma denso y persistente.
-                  </p>
-                  <button
-                    @click.prevent="openModal('ZOMBIE KUSH')"
-                    class="w-full bg-gradient-to-r from-greenglows to-green-400 text-deepblue px-6 py-3 rounded-3xl font-extrabold text-lg shadow-neon-green hover:brightness-110 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-greenglows focus:ring-opacity-60"
-                    aria-label="Ver detalles de Zombie Kush"
-                  >
-                    Ver detalles
-                  </button>
-                </div>
-              </div>
+         
 
               <div
                 class="relative catalog-item glass-effect rounded-3xl overflow-hidden border border-green-400/30 hover:border-green-400/60 focus-within:ring-4 focus-within:ring-green-400 focus-within:ring-opacity-60 shadow-neon-green"
@@ -1598,30 +1484,8 @@
         const ageVerified = ref(false);
 
         const strainDetails = {
-          'SUPER LEMON': {
-            image:
-              'https://placehold.co/600x384/png?text=Super+Lemon+-+variedad+c%C3%ADtrica+intensa',
-            potencia: 'Premium',
-            rating: '4.8',
-            flavor:
-              'Dominante limón con notas de mango tropical. Sabor cítrico intenso y refrescante.',
-            effects:
-              'Efecto energizante y creativo. Ideal para actividades diurnas y momentos de inspiración.',
-            genetics: 'Híbrido dominante Sativa (60% Sativa / 40% Indica)',
-            flowering: '8-9 semanas',
-          },
-          TANGIE: {
-            image:
-              'https://placehold.co/600x384/png?text=Tangie+-+sabor+a+mandarina+reci%C3%A9n+pelada',
-            potencia: 'Potente',
-            rating: '4.7',
-            flavor:
-              'Intenso sabor a mandarina tropical con efectos euforizantes y estimulantes.',
-            effects:
-              'Efecto cerebral energético y social. Perfecto para momentos creativos y sociales.',
-            genetics: 'Híbrido dominante Sativa (70% Sativa / 30% Indica)',
-            flowering: '9-10 semanas',
-          },
+      
+         
           'MIMOSA': {
             image:
               './mimosa.png',
@@ -1634,17 +1498,17 @@
             genetics: 'Purple Punch × Clementine — híbrido dominante Sativa 70% / Indica 30%',
             flowering: '9-10 semanas en interior · cosecha exterior a mediados de octubre',
           },
-          GELATO: {
+          'ZOMBIE KUSH': {
             image:
-              'https://placehold.co/600x384/png?text=Gelato+-+variedad+terrosa+con+notas+de+bosque',
-            potencia: 'Premium',
-            rating: '4.9',
+              'https://saltonverde.com/wp-content/uploads/2022/02/zombie-bride-ripper-seeds-02.jpg',
+            potencia: '3 · CBD < 1 %   ',
+            rating: '4',
             flavor:
-              'Perfil terroso con notas profundas de pino del Mediterráneo y cacao.',
+              'Baya dulce, pino y especias kush con fondo terroso; toques de frutos rojos y lavanda que dejan un aroma denso y persistente.',
             effects:
-              'Efecto relajante y eufórico. Ideal para momentos de descanso y meditación.',
-            genetics: 'Híbrido dominante Indica (60% Indica / 40% Sativa)',
-            flowering: '8-9 semanas',
+              'Sedación rápida tipo “couch-lock”, alivio muscular y aumento de apetito; ideal para combatir estrés, insomnio y dolor crónico.',
+            genetics: 'Sideral (Lavender Kush × Amnesia) × Bubba Kush — híbrido Índica 80 % / Sativa 20 %',
+            flowering: 'Indoor: 55-60 días · Outdoor: cosecha principios-mediados de octubre.',
           },
           'OG KUSH': {
             image:
